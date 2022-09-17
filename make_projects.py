@@ -16,7 +16,7 @@ slug = "projects"
 """
 
 
-class Markdown_entry:
+class markdown_entry_class:
     def __init__(self, date) -> None:
         self.content = ""
         self.date = date
@@ -65,7 +65,7 @@ def convert_list_of_projects_to_markdown_entry(api_response):
 
 def convert_project_response_to_markdown_entry(project):
     '''Takes a project entry from the GitHub API response and returns a markdown_entry entry.'''
-    markdown_entry = Markdown_entry(
+    markdown_entry = markdown_entry_class(
         date=project['created_at'][:10]
     )
 
@@ -94,10 +94,10 @@ def convert_project_response_to_markdown_entry(project):
     return markdown_entry
 
 
-def make_projects_md(github_user):
+def make_projects_md(github_user, load=True):
     '''Create a projects.md file based on a user's (public) GitHub repositories'''
 
-    if True:
+    if load:
         query_url = f"https://api.github.com/users/{github_user}/repos?per_page=100"
         repo_info = requests.get(query_url).json()
     else:
