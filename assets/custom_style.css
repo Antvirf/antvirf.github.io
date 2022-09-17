@@ -1,0 +1,47 @@
+
+h1, h2, h3, h4, h5, h6, p, body, a, a.navigation-title {
+    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+}
+
+body.colorscheme-dark a,
+body.colorscheme-dark .navigation a:hover,
+body.colorscheme-light .navigation a:hover {
+    color: orange;
+}
+
+a {
+    color: orange;
+}
+
+body.colorscheme-dark .highlight pre {
+    background-color: #424242 !important;
+}
+
+@media print and (-webkit-min-device-pixel-ratio:0) {
+    body, a, h1, h2, h3, h4, h5, h6, p, .navigation {
+        font-size: 10pt !important;
+        font-family: 'Ubuntu', Arial, Helvetica, sans-serif !important;
+}
+}
+
+@media print {
+    body * {
+      visibility: hidden;
+    }
+    #container-for-print * {
+      visibility: visible;
+    }
+    #container-for-print {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .heading-link {
+        visibility: hidden !important;
+    }
+    .fa, .fa-link, .sr-only {
+        visibility: hidden !important;
+    }
+
+  }
+  

@@ -1,0 +1,19 @@
+<section class="container page" id="container-for-print">
+  <article>
+    
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="{{ .Permalink | safeURL }}">
+          {{ .Title }}
+        </a>
+        {{ if eq .Page.Title "CV" }}
+              &emsp;<a class="navigation navigtaion-item" aria-hidden="true" title="Print" onClick="window.print()"><i class="fa fa-print"></i></a>
+          <link rel="stylesheet" href="/custom_style.css" media="print">
+        {{ end}}
+      </h1>  
+    </header>
+    <section >
+      {{ .Content }}
+    </section>
+  </article>
+</section>
