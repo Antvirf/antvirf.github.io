@@ -2,9 +2,11 @@
   {{ if $.Site.IsServer }}
     {{ $styles := resources.Get . }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="print">
   {{ else }}
     {{ $styles := resources.Get . | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="print" />
   {{ end }}
 {{ end }}
 
@@ -14,8 +16,10 @@
     {{ $cssOpts := (dict "enableSourceMap" true ) }}
     {{ $styles := resources.Get . | toCSS $cssOpts }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="screen">
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" media="print">
   {{ else }}
     {{ $styles := resources.Get . | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="print" />
   {{ end }}
 {{ end }}
