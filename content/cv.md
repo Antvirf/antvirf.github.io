@@ -15,14 +15,13 @@ author = "Antti Viitala"
 * Experienced and fluent at working with stakeholders of all levels across business and technology
 * Effective and driven learner, able to take new topics/technologies to a working level very quickly
 
-## Key skills
+## Key skills & interests
 
 * **Tech platforms and tools:** Azure | GitHub Actions | Docker | Kubernetes | JFrog | AWS | Atlassian (Jira/Confluence) | Jenkins
-* **Programming languages:** Python (backend) | Bash | Terraform | DAML | basic SQL/NoSQL (mongoDB)
+* **Programming languages:** Python (backend) | Bash | Terraform | DAML | basic SQL/NoSQL (mongoDB) | Workflow languages (yaml) | HTML/CSS
 * **Business applications:** Office | Excel + VBA | UiPath | Blue Prism | Tableau | Qlik Sense
 * **Languages:** English 🇬🇧 | Finnish 🇫🇮
 * **Personal interests:** Ultrarunning 🏃 | Swimming 🏊 | Esports/FPS 🔫 | Electric guitar🎸
-* **Personal projects:** Garmin watch face ([Git](https://github.com/Antvirf/spectrefenix) | [ConnectIQ](https://apps.garmin.com/en-US/apps/904f5de7-2dc6-456f-9f5d-fc81dd47c53e)), Slouch alert ([Git](https://github.com/Antvirf/posture-detection))
 
 ## Work experience
 
@@ -31,8 +30,8 @@ author = "Antti Viitala"
 #### **Solution Architect (Vice President)** - System design, devops, CI/CD, cloud, software development
 
 * S8 Operating model definition: devops, tech stack (incl. licensing), architecture principles, security policies
-* Set up and operation of our CI/CD pipelines and cloud infra (Using GitHub, Azure, JFrog)
-* Architecture/infra/devops for a financial-services focused risk analytics visualization app (Azure, Kubernetes, GitHub Actions, flutter/java, SonarCloud)
+* Set up, administration and operation of our CI/CD pipelines and cloud infra (Using GitHub, Azure, JFrog)
+* Architecture/infra/devops for a financial-services focused risk analytics visualization app (Azure, Kubernetes, GitHub Actions, front: Flutter(PWA) / back : Spring Boot, SonarCloud)
 * Infra, architecture and development of a [DAML](https://www.digitalasset.com/developers)-based collateral management system MVP
 * Various internal initiatives, e.g. creating our [hiring challenges site](https://challenges.synpulse8.com/) in a couple of hours with Hugo and Azure Static Web apps
 

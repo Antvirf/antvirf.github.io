@@ -2,7 +2,7 @@
 author = "Antti Viitala"
 title = "Azure Kubernetes Service, NGINX ingress and DNS"
 date = "2022-09-12"
-description = "Short post on how to configure an NGINX ingress for an AKS cluster, including appropriate DNS records."
+description = "High-level notes on how to configure an NGINX ingress for an AKS cluster, including appropriate DNS records."
 tags = [
     "azure",
     "kubernetes",
@@ -11,7 +11,7 @@ tags = [
 ]
 +++
 
-# Target architecture
+## Target architecture
 
 * Two sub-domains, single TSL wildcard certificate
 * Single load balancer (with a singular public IP)
@@ -133,9 +133,36 @@ spec:
   type: ClusterIP # this is the most important part
 ```
 
-## Create/update an ingress route for each service
+## Create/update an ingress route resource for each service
 
-See ```ingress-route.yaml```. This resource ***must*** be in the same namespace as the service being routed to.
+This resource ***must*** be in the same namespace as the service being routed to.
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-route
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/configuration-snippet: rewrite ^([^.?]*[^/])$ $1/ redirect; # adds / at the end of paths
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - one.domain.com
+    secretName: tsl-secret
+  rules:
+  - host: one.domain.com
+    http:
+      paths:
+      - path: /(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: front-service
+            port:
+              number: 80
+```
 
 ## Configure SSL - create a kubernetes secret
 
