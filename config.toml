@@ -116,7 +116,7 @@ languageName = ":uk:"
 [[languages.en.menu.main]]
 name = "CV"
 weight = 1
-url = "about/"
+url = "cv/"
 
 [[languages.en.menu.main]]
 name = "Blog"
