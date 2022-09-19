@@ -42,7 +42,7 @@ In a GitHub Actions step, this can be done with:
 
 Sometimes the control flow needs to *use the contents of the error* to gracefully resolve the problem. There are a few steps that the flow needs to do in this case:
 
-1. Define an ```id``` for the step that may fail (so that we can refer to it's outcome status later in the flow).
+1. Define an ```id``` for the step that may fail (so that we can refer to its outcome status later in the flow).
 1. The step that may fail must have the flag ```continue-on-error: true``` defined - otherwise GitHub will stop and fail the action.
 1. The failing steps needs to save the error message so that it can be processed later. This is done using the ```2> err.txt``` to save this error output to a file.
 1. Following steps can use the status of the failing step as a condition for execution.
