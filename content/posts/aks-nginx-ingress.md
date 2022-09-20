@@ -147,10 +147,11 @@ metadata:
     nginx.ingress.kubernetes.io/configuration-snippet: rewrite ^([^.?]*[^/])$ $1/ redirect; # adds / at the end of paths
 spec:
   ingressClassName: nginx
-  tls:
-  - hosts:
-    - one.domain.com
-    secretName: tsl-secret
+  # # TLS option: to be enabled later
+  # tls:
+  # - hosts:
+  #   - one.domain.com
+  #   secretName: my-tsl-secret
   rules:
   - host: one.domain.com
     http:
@@ -164,7 +165,7 @@ spec:
               number: 80
 ```
 
-## Configure SSL - create a kubernetes secret
+## Configure TSL - create a kubernetes secret
 
 ```yaml
 apiVersion: v1
@@ -181,15 +182,31 @@ data:
 
 ```
 
-Which can be created with:
+The kubernetes secret can be created with:
 
 ```shell
 kubectl create secret tls my-tls-secret \
-    --cert=path/to/cert/file \
-    --key=path/to/key/file
+    --cert cert.crt \
+    --key key.key
 ```
 
-Then, add the TSL block to each ```ingress-route.yaml```:
+The ```cert.crt``` can be created within a CD flow, as it is just a text file in the format of:
+```txt
+-----BEGIN PRIVATE KEY-----
+...
+-----END PRIVATE KEY-----
+```
+
+Similarly, ```key.key``` can be created within a CD flow, as it is just a text file in the format of:
+```txt
+-----BEGIN CERTIFICATE-----
+...
+-----END CERTIFICATE-----
+```
+
+## Configure TSL: Add the TLS option to ingress-route.yaml
+
+Finally, after the secret has been created, add the TSL block to each ```ingress-route.yaml```. The block below can be seen in the ingress resource definition above where it was commented out previously.
 
 ```yaml
 ...
@@ -197,7 +214,7 @@ spec:
   tls:
   - hosts:
     - one.domain.com
-    secretName: wildcard-tsl-secret
+    secretName: my-tls-secret
   ...
 ...
 ```
