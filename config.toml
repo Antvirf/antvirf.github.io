@@ -21,8 +21,8 @@ description = "Antti Viitala personal portfolio site"
 keywords = "blog,developer,personal"
 info = ["DevOps", "Cloud Architecture", "Professional googler"]
 avatarURL = "images/avatar.png"
-favicon_16 = "favicon_16.ico"
-favicon_32 = "favicon_32.ico"
+favicon_16 = "images/favicon-16x16.png"
+favicon_32 = "images/favicon-32x32.png"
 #gravatar = "john.doe@example.com"
 dateFormat = "2006-01-02"
 since = 2022
@@ -78,7 +78,10 @@ childsrc = ["'self'"]
 fontsrc = ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net/"]
 formaction = ["'self'"]
 framesrc = ["'self'"]
-imgsrc = ["'self'"]
+imgsrc = [
+  "'self'",
+  "http://aviitala.goatcounter.com",
+  "https://aviitala.com"]
 objectsrc = ["'none'"]
 stylesrc = [
   "'self'",
@@ -90,7 +93,8 @@ scriptsrc = [
   "'self'",
   "'unsafe-inline'",
   "https://www.google-analytics.com",
-  "https://cdn.jsdelivr.net/"
+  "https://cdn.jsdelivr.net/",
+  "http://gc.zgo.at"
 ]
 prefetchsrc = ["'self'"]
 # connect-src directive – defines valid targets for to XMLHttpRequest (AJAX), WebSockets or EventSource
