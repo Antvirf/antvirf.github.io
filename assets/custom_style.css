@@ -13,6 +13,22 @@ a {
     color: orange;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        background-color: #424242 !important;
+    }
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+        background-color: #fafafa !important;
+    }
+  }
+
+body.dark {
+    background-color: #424242 !important;
+  }
+
+
 body.colorscheme-dark .highlight pre {
     background-color: #424242 !important;
 }
