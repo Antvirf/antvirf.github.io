@@ -63,6 +63,6 @@ services:
 
 As a result, with this configuration we can happily:
 
-* Query ```back``` from the ```front``` with ```http://back/api/v2/...``` - just like we would inside kubernetes
+* Query ```back``` from the ```front``` with ```http://back/api/v2/...``` - same as inside kubernetes
 * Access the ```front``` from ```http://localhost:80``` or ```http://localhost```
 * Access the ```back``` from ```http://localhost:8080```
