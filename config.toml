@@ -41,6 +41,9 @@ customSCSS = []
 # Custom JS
 customJS = []
 
+[permalinks]
+posts = '/posts/:slugorfilename' #-:year:month:day'
+
 # If you want to use fathom(https://usefathom.com) for analytics, add this section
 # [params.fathomAnalytics]
 # siteID = "ABCDE"
