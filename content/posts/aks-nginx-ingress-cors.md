@@ -2,7 +2,7 @@
 author = "Antti Viitala"
 title = "Configuring CORS settings on kubernetes NGINX ingress"
 date = "2022-09-30"
-description = "High-level notes on how to configure CORS easily with NGINX ingress."
+description = "Basic guide on how to configure CORS with kubernetes NGINX ingress in a secure way, without burying the problem or over-exposing the service in question."
 tags = [
     "kubernetes",
     "infrastructure",
