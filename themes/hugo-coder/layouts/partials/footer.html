@@ -7,14 +7,6 @@
     {{ now.Year }}
     {{ with .Site.Params.author }} {{ . }} {{ end }}
     ·
-    <!--
-    {{ with .Site.GetPage "/cv" }}
-    {{ if (and .Site.Params.commit .GitInfo) }}
-        [<a href="{{ .Site.Params.commit }}/{{ .GitInfo.Hash }}">{{ .GitInfo.AbbreviatedHash }}</a>]
-      {{ end }}
-    {{ end }}
-    ·
-    -->
     {{ if (and .Site.Params.license) }}
       {{ i18n "licensed_under" }} {{ .Site.Params.license | safeHTML }}
     ·
