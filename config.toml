@@ -88,7 +88,8 @@ imgsrc = [
   "https://github.com",
   "https://raw.githubusercontent.com",
   "https://img.shields.io",
-  "https://sonarcloud.io"
+  "https://sonarcloud.io",
+  "https://dl.circleci.com"
   ]
 objectsrc = ["'none'"]
 stylesrc = [
