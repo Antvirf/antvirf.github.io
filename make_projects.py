@@ -16,16 +16,29 @@ slug = "projects"
 """
 
 
-class markdown_entry_class:
-    def __init__(self, date) -> None:
+class MarkdownEntryClass:
+    '''
+    Store content and date info, as well as implement convenience methods for updating
+    and creating the content block.
+    '''
+
+    def __init__(self, date, branch, repo_full_name) -> None:
         self.content = ""
+        self.readme = ""
+        self.badges = []
+
+        # constructor args
         self.date = date
+        self.default_branch = branch
+        self.repo_full_name = repo_full_name
 
     def add_line(self, line):
+        '''Add a line of content with two newlines at the end'''
         self.content += line + "\n\n"
         return self
 
     def add_verbose_line(self, line, continue_previous_line=False):
+        'Add a line of content plus add a dot at the end if not included in the content itself.'
         while continue_previous_line:
             if self.content[-1] == "\n":
                 self.content = self.content[:-1]
@@ -38,11 +51,56 @@ class markdown_entry_class:
         self.content += line + "\n\n"
         return self
 
+    def _get_readme(self):
+        '''Fetches README.md of the repo and stores it with the object'''
+        req = requests.get(
+            f"https://raw.githubusercontent.com/{self.repo_full_name}/{self.default_branch}/README.md",
+            timeout=10)
+        self.readme = req.text
+
+    def _get_badges(self):
+        '''Get badge markdown lines from then README.'''
+
+        self.badges = []
+
+        # only process the first 10 lines - we don't want to get images from later down
+        for line in self.readme.split("\n")[:10]:
+            if line.startswith(("![", "[![")):
+
+                # process the line - it could contain MANY badges!
+                line = line.replace(
+                    "(./",
+                    f"(https://raw.githubusercontent.com/{self.repo_full_name}/{self.default_branch}/"
+                )
+
+                # given
+                #![downloads](./badges/downloads.svg)
+                # target:
+                # https://raw.githubusercontent.com/Antvirf/spectrefenix/main/badges/downloads.svg
+
+                # detect if URL needs to be fixed
+                self.badges.append(line)
+        print(self.badges)
+
+    def add_badges(self):
+        '''Gets readme, gets badges and adds the badges to the markdown content of the entry.'''
+        self._get_readme()  # fetches readme file
+        self._get_badges()  # parses badge lines to memory
+
+        for badge in self.badges:
+            self.content += badge+"\n"
+        self.content += "\n"
+
     def get_md(self):
+        '''Return content as a markdown string'''
         return self.content
 
 
 def convert_list_of_projects_to_markdown_entry(api_response):
+    '''
+    Take list of projects and convert it into a markdown-styled string ready for use.
+    Adds the projects on top of a base template, and sorts the projects by creation date.
+    '''
     base = PROJECTS_BASE_TEMPLATE
     markdown_entries = []
 
@@ -58,6 +116,7 @@ def convert_list_of_projects_to_markdown_entry(api_response):
     )
 
     for entry in markdown_entries:
+        base += "***\n\n"
         base += entry.get_md()
 
     return base
@@ -65,14 +124,19 @@ def convert_list_of_projects_to_markdown_entry(api_response):
 
 def convert_project_response_to_markdown_entry(project):
     '''Takes a project entry from the GitHub API response and returns a markdown_entry entry.'''
-    markdown_entry = markdown_entry_class(
-        date=project['created_at'][:10]
+    markdown_entry = MarkdownEntryClass(
+        date=project['created_at'][:10],
+        branch=project['default_branch'],
+        repo_full_name=project['full_name']
     )
 
     # title with link
     markdown_entry.add_line(
         f"## [{project['name']}]({project['html_url']}) ({project['created_at'][:10]})"
     )
+
+    # badges
+    markdown_entry.add_badges()
 
     # description
     markdown_entry.add_verbose_line(
@@ -99,7 +163,7 @@ def make_projects_md(github_user, load=True):
 
     if load:
         query_url = f"https://api.github.com/users/{github_user}/repos?per_page=100"
-        repo_info = requests.get(query_url).json()
+        repo_info = requests.get(query_url, timeout=10).json()
     else:
         with open('t.json', 'r') as json_data:
             repo_info = json.load(json_data)

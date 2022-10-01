@@ -84,7 +84,12 @@ framesrc = ["'self'"]
 imgsrc = [
   "'self'",
   "http://aviitala.goatcounter.com",
-  "https://aviitala.com"]
+  "https://aviitala.com",
+  "https://github.com",
+  "https://raw.githubusercontent.com",
+  "https://img.shields.io",
+  "https://sonarcloud.io"
+  ]
 objectsrc = ["'none'"]
 stylesrc = [
   "'self'",
