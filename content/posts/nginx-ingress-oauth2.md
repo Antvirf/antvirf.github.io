@@ -1,6 +1,6 @@
 +++
 author = "Antti Viitala"
-title = "Protecting kubernetes with OAuth2 Proxy and NGINX Ingress controller"
+title = "Protecting kubernetes with OAuth2 Proxy and NGINX Ingress"
 date = "2022-10-03"
 description = "Basic guide on how to configure the OAuth2 proxy + NGINX Ingress controller using GitHub as the identity provider to protect kubernetes endpoints from public access."
 tags = [
