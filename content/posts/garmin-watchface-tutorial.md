@@ -106,7 +106,7 @@ By default, the template comes with three pre-defined settings:
 
 <!-- todo: EXPLAIN HOW THE SETTINGS WORK TOGETHER -->
 
-```layouts``` can be used to define simpler and static elements of your watch face, for example drawing a bitmap logo or rendering time as text. This file will be updated later to customise how time and date is displayed.
+```layouts``` can be used to define simpler and static elements of your watch face, for example drawing a bitmap logo or rendering time as text. This file will be updated later to customize how time and date is displayed.
 
 The ```drawables``` directory contains your app's launcher icon. This may be more relevant for other Connect IQ apps, but for watch faces I haven't come across a need to change it.
 
@@ -283,7 +283,7 @@ Once finished, you will have a ```projectname.iq``` file, ready for upload to th
 1. Go through the process, upload app pictures where requested.
 1. If desired, tick the box to mark it as a beta application (to only allow yourself to download it later).
 1. Once complete, you will have to wait for approval - see the [developer dashboard](https://apps.garmin.com/en-US/developer/dashboard) to check the status.
-1. Once the status changes to **Approved**, you can download the app.
+1. Once the status changes to **Approved**, you can download the app. This may take up to 3 days.
 
 ## Transferring a watch face to your watch (offline)
 
@@ -295,6 +295,8 @@ Once finished, you will have a ```projectname.iq``` file, ready for upload to th
 ## Downloading the watch face to your watch
 
 Your app must be approved by Garmin before it can be downloaded. Once the approval process is complete, you can search for it on the ConnectIQ store and download to your device.
+
+The watch face created during this guide, is available [here](https://apps.garmin.com/en-US/apps/38b1b25e-3cf7-4993-9fd9-7ced64eb3564).
 
 ## References
 
