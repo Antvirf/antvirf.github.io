@@ -201,9 +201,9 @@ To change any of the device settings - such as preferred time format - choose th
 
 The default watch face already renders time in digital format. Though the design calls for the time to be displayed in 24-hour format, the template code actually uses the user-defined device-level settings for time 12 vs. 24-hour time format, so we get this optional functionality out of the box.
 
-First, as my focus is on military time, I changed the default value for the relevant setting (```UseMilitaryFormat```). I also changed the default value of ```ForegroundColor``` to white in [this commit](https://github.com/Antvirf/garmin-watch-face-guide/commit/6c568869b294ba76e1da027d6d055e74a62cbef9).
+First, as my focus is on military time, I changed the default value for the relevant setting (```UseMilitaryFormat```). I also changed the default value of ```ForegroundColor``` to white in [this commit](https://github.com/Antvirf/garmin-watch-face-guide/commit/80d22cf7e0e0d237ba4250978dc2ef5a4955d707).
 
-The size of the text is obviously too small - this is fixed by changing the font in ```resources/layouts/layout.xml``` in [this commit](https://github.com/Antvirf/garmin-watch-face-guide/commit/9d318211f91478b709dec76311143f775795996c). The different constants describing fonts are listed [here](https://developer.garmin.com/connect-iq/api-docs/Toybox/Graphics.html) in the SDK docs. In this case, I changed the font value to ```Graphics.FONT_SYSTEM_NUMBER_THAI_HOT```. You can see the change displayed below.
+The size of the text is obviously too small - this is fixed by changing the font in ```resources/layouts/layout.xml``` in [this commit](https://github.com/Antvirf/garmin-watch-face-guide/commit/3387e5fe143b444772017b6244cec42327322b70). The different constants describing fonts are listed [here](https://developer.garmin.com/connect-iq/api-docs/Toybox/Graphics.html) in the SDK docs. In this case, I changed the font value to ```Graphics.FONT_SYSTEM_NUMBER_THAI_HOT```. You can see the change displayed below.
 
 ![font-before](/content/font-before.png)![font-after](/content/font-after.png)
 
@@ -217,7 +217,7 @@ The ```layout.xml``` file needs an additional label. The positioning is done in 
 <label id="DateLabel" x="center" y="20%" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER"/>
 ```
 
-The code to update the date is simple, though note that the lines must be added before ```View.onUpdate(dc)``` is called. Additionally, a new import is added at the top: ```import Toybox.Time.Gregorian;```. Formatting is done with [```Lang.format()```](https://developer.garmin.com/connect-iq/api-docs/Toybox/Lang.html#format-instance_function). The commit with this change can be found [here](https://github.com/Antvirf/garmin-watch-face-guide/commit/33390f3be5ff819b56547e85c2dea250068de704).
+The code to update the date is simple, though note that the lines must be added before ```View.onUpdate(dc)``` is called. Additionally, a new import is added at the top: ```import Toybox.Time.Gregorian;```. Formatting is done with [```Lang.format()```](https://developer.garmin.com/connect-iq/api-docs/Toybox/Lang.html#format-instance_function). The commit with this change can be found [here](https://github.com/Antvirf/garmin-watch-face-guide/commit/3b248a442eb7792c70a85e1d184f8a17d86a5e4f).
 
 ```c
 function onUpdate(dc as Dc) as Void {
@@ -259,7 +259,7 @@ As per the design, the watch face needs to have three different gauge elements, 
 
 This function is called  ```drawGauge()``` in the code, and calls a separate function ```drawHashMarksAndLabels()``` which in turn renders certain elements of the gauge. The actual implementation uses arrays instead of individual arguments, as the maximum number of function parameters is capped to 10 in MonkeyC.
 
-The detailed development of this function - drawing 2D graphics and the mathematics around it - aren't in the scope of this guide, but the code can be found in [this commit](https://github.com/Antvirf/garmin-watch-face-guide/commit/2dbb421ed26a0673ec5755cb3db5d82dcd920ee8). If you are interested in learning more, the key functions used from the Garmin SDK graphics libraries are [```drawArc()```](https://developer.garmin.com/connect-iq/api-docs/Toybox/Graphics.html#ArcDirection-module), [```drawText()```](https://developer.garmin.com/connect-iq/api-docs/Toybox/Graphics/Dc.html#drawText-instance_function) and [```fillPolygon()```](https://developer.garmin.com/connect-iq/api-docs/Toybox/Graphics/Dc.html#fillPolygon-instance_function).
+The detailed development of this function - drawing 2D graphics and the mathematics around it - aren't in the scope of this guide, but the code can be found in [this commit](https://github.com/Antvirf/garmin-watch-face-guide/commit/ce090ac847ad098f23d54dfbad2975c63b0d0a20). If you are interested in learning more, the key functions used from the Garmin SDK graphics libraries are [```drawArc()```](https://developer.garmin.com/connect-iq/api-docs/Toybox/Graphics.html#ArcDirection-module), [```drawText()```](https://developer.garmin.com/connect-iq/api-docs/Toybox/Graphics/Dc.html#drawText-instance_function) and [```fillPolygon()```](https://developer.garmin.com/connect-iq/api-docs/Toybox/Graphics/Dc.html#fillPolygon-instance_function).
 
 ![with gauges](/content/with-gauges.png)
 
