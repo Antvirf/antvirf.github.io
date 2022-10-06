@@ -1,7 +1,7 @@
 +++
 author = "Antti Viitala"
 title = "Making a custom Garmin watch face"
-date = "2022-10-04"
+date = "2022-10-06"
 description = "Use Visual Studio Code and the Garmin SDK to build a custom digital watch face and release it to the Garmin ConnectIQ store."
 tags = [
     "development"
@@ -46,9 +46,9 @@ The design for this watch face is very simple and prioritizes legibility of a sm
 
 * **Current time**: Digital 24-hour format, hours and minutes only, without separator for hours/minutes - e.g. 1527 for 3:27pm.
 * **Current date**: Without year, in dd-mm format - e.g. 31-12 for 31st of December
-* **Battery**:Overall battery %
+* **Battery**: Overall battery %
 * **Steps**: Show today's steps versus a pre-defined (here hardcoded) target - e.g. 10k
-* **Sunrise/sunset**: Sadly Garmin SDK does not provide these values for custom watch faces, so the values are hardcoded.
+* **Sunrise/sunset**: Sadly Garmin SDK does not provide these values for custom watch faces, so the values are hardcoded to 0615 and 1830.
 
 Based on the above, I created a rough sketch of what to develop, shown below. I added the 'hour' indices to help with placement of the gauges, they will not be rendered as a part of the watch face.
 
@@ -96,15 +96,13 @@ The ```manifest.xml``` file contains high-level details about your application. 
 
 ### ```resources``` - non-code assets and configuration files
 
-The four subdirectories under ```resources``` contain non-code assets and configuration files for your watch face application. ```properties.xml```, ```settings.xml``` and ```strings.xml``` together define the user-configurable options that you may want to implement - for example choosing between different date formats or choosing different data points for the watch face.
+The four subdirectories under ```resources``` contain non-code assets and configuration files for your watch face application. ```properties.xml```, ```settings.xml``` and ```strings.xml``` together define the user-configurable options that you may want to implement - for example choosing between different date formats or choosing different data points for the watch face. ```properties.xml``` contains the default values, ```settings.xml``` describes the type of setting and options available to the user, and ```strings.xml``` maps settings options to machine-readable variable values.
 
 By default, the template comes with three pre-defined settings:
 
 * Background color: Color for watch face background, defaults to black
 * Foreground color: Color for rendering time, defaults to red
 * Use military time: True/false for whether to use this format, defaults to false
-
-<!-- todo: EXPLAIN HOW THE SETTINGS WORK TOGETHER -->
 
 ```layouts``` can be used to define simpler and static elements of your watch face, for example drawing a bitmap logo or rendering time as text. This file will be updated later to customize how time and date is displayed.
 
@@ -163,17 +161,21 @@ The other functions, especially dealing with hide/show and entering/exiting slee
 
 ### Device aspect ratio and round vs. square watches
 
-Know what you are developing for and choose your build targets accordingly. The watch face in this guide is clearly specifically designed for a round watch face (with a 1:1 aspect ratio - i.e. a circle), so making it available on square-faced watches would lead to a pretty bad experience.
-
-Note that Garmin also has some stranger devices with non-square aspect ratios, if you plan on making your app available on *every* device, you should then correspondingly test it in the simulator for each aspect ratio and screen shape.
+Know what you are developing for and choose your build targets accordingly. The watch face in this guide is clearly specifically designed for a round watch face (with a 1:1 aspect ratio - i.e. a circle), and rendering the gauges for example would break on other types of screens. Note that Garmin also has some stranger devices with non-square aspect ratios, so if you plan on making your app available on *every* device, you should then correspondingly test it in the simulator for each aspect ratio and screen shape.
 
 ### Scaling elements based on resolution
 
-Devices that have the same aspect ratio and screen shape may still have significantly different resolutions. Resolution tends to increase over time with each new model, and resolutions are generally much higher with more smartwatch-oriented devices. For example, the screen resolution of the Fenix 7S is 240x240, while the resolution of the Venu is 390x390.
+Devices that have the same aspect ratio and screen shape may still have significantly different resolutions. For example, the screen resolution of the Fenix 7S is 240x240, while the resolution of the Venu is 390x390.
 
-This means that when you define the position of an element on the screen, you should always define it in a **relative** way. If an element is drawn "10 pixels to the right, from the left edge of the screen", the gap will look large on a Fenix but tiny on a Venu, so the proportions of your app are distorted. Similarly for the thickness of an element - a line 2 pixels in thickness will be decently legible on an older Fenix, but will look oddly small on a Venu.
+This means that when you define the position of an element on the screen, you should always define it in a **relative** way. If an element is drawn "10 pixels to the right, from the left edge of the screen", the gap will look large on a Fenix but tiny on a Venu, so the proportions of your app are distorted. Similarly for the thickness of an element - a line 2 pixels in thickness will be decently legible on an older Fenix, but will look oddly small on a Venu. To preserve the proportions of your design, elements have to be both **positioned** and **scaled** depending on the resolution of the screen.
 
-To preserve the proportions of your design, elements have to be both **positioned** and **scaled** depending on the resolution of the screen.
+For scaling, in my watch faces I define a scaling variable based on the current device screen width vs. the value Fenix 6 I primarily develop for:
+
+```c
+var scaler = dc.getWidth()/260.0;
+// 1.0 for Fenix 6
+// 390/260 = 1.5 for Venu etc.
+```
 
 ## Adding a target device and language to your project
 
@@ -204,7 +206,7 @@ To change any of the device settings - such as preferred time format - choose th
 
 The default watch face already renders time in digital format. Though the design calls for the time to be displayed in 24-hour format, the template code actually uses the user-defined device-level settings for time 12 vs. 24-hour time format, so we get this optional functionality out of the box.
 
-First, as my focus is on military time, I changed the default value for the relevant setting (```UseMilitaryFormat```). I also changed the default value of ```ForegroundColor``` to white in [this commit](https://github.com/Antvirf/garmin-watch-face-guide/commit/80d22cf7e0e0d237ba4250978dc2ef5a4955d707).
+First, as my focus is on military time, I changed the default value for the relevant setting (```UseMilitaryFormat```). I also changed the default value of ```ForegroundColor``` to white in [this commit](https://github.com/Antvirf/garmin-watch-face-guide/commit/80d22cf7e0e0d237ba4250978dc2ef5a4955d707). Later on I removed the background and foreground color setting customization options in [this commit](https://github.com/Antvirf/garmin-watch-face-guide/commit/1a3add89faa8417bcba2a9452ef24771a03a0e7f).
 
 The size of the text is obviously too small - this is fixed by changing the font in ```resources/layouts/layout.xml``` in [this commit](https://github.com/Antvirf/garmin-watch-face-guide/commit/3387e5fe143b444772017b6244cec42327322b70). The different constants describing fonts are listed [here](https://developer.garmin.com/connect-iq/api-docs/Toybox/Graphics.html) in the SDK docs. In this case, I changed the font value to ```Graphics.FONT_SYSTEM_NUMBER_THAI_HOT```. You can see the change displayed below.
 
@@ -268,8 +270,10 @@ The detailed development of this function - drawing 2D graphics and the mathemat
 
 ## Compiling the project
 
+Note that you must have a developer key defined to do this. You can generate one with the extension by running **"Monkey C: Generate Developer Key"**.
+
 1. Open command palette with ```ctrl + shift + p``` (```cmd + shift + p``` on mac)
-1. Type "Monkey C: Export project"
+1. Type **"Monkey C: Export project"**
 1. Choose the export location to save the file to
 
 Once finished, you will have a ```projectname.iq``` file, ready for upload to the Garmin store. If you would like to transfer the file to your watch directly instead, use the ```projectname.prg``` file.
@@ -297,6 +301,8 @@ Once finished, you will have a ```projectname.iq``` file, ready for upload to th
 Your app must be approved by Garmin before it can be downloaded. Once the approval process is complete, you can search for it on the ConnectIQ store and download to your device.
 
 The watch face created during this guide, is available [here](https://apps.garmin.com/en-US/apps/38b1b25e-3cf7-4993-9fd9-7ced64eb3564).
+
+![final](/content/hero.jpg)
 
 ## References
 
