@@ -6,6 +6,9 @@ description = "Use Visual Studio Code and the Garmin SDK to build a custom digit
 tags = [
     "development"
 ]
+thumbnail = "/content/header.png"
+images = ["/content/header.png"]
+series = []
 +++
 
 ![header](/content/header.png)
