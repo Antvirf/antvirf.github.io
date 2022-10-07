@@ -27,7 +27,7 @@ enableGitInfo = true
   dateFormat = "2006-01-02"
   since = 2022
   manifest =  "site.webmanifest"
-  images = ['images/splash.png']
+  images = ['images/apple-touch-icon-152x152.png','images/splash.png']
 
 # Git Commit in Footer, uncomment the line below to enable it
 commit = "https://github.com/Antvirf/antvirf.github.io/commit"
