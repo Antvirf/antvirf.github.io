@@ -8,6 +8,7 @@ tags = [
     "devops",
     "ci-cd"
 ]
+images = ['images/apple-touch-icon-152x152.png','images/splash.png']
 +++
 
 *Here, a 'failing step' means a step that includes a command with a non-zero exit code.*

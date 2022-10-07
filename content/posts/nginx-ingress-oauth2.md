@@ -9,6 +9,7 @@ tags = [
     "devops",
     "oauth"
 ]
+images = ['images/apple-touch-icon-152x152.png','images/splash.png']
 +++
 
 ## High-level authentication and authorization flow

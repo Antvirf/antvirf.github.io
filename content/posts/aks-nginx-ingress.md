@@ -9,6 +9,7 @@ tags = [
     "infrastructure",
     "devops"
 ]
+images = ['images/apple-touch-icon-152x152.png','images/splash.png']
 +++
 
 ## Target architecture

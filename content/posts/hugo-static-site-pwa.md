@@ -7,6 +7,7 @@ tags = [
     "devops",
     "development"
 ]
+images = ['images/apple-touch-icon-152x152.png','images/splash.png']
 +++
 
 After learning the basics of [Progressive Web Applications (PWAs)](https://web.dev/progressive-web-apps/) at work, I decided to update this site to fill the requirements of a PWA. The commit with those changes can be found [here](https://github.com/Antvirf/antvirf.github.io/commit/01377e738439aedf72c4fd676f24234e31cfe7d9). This post contains the basic details required to turn a static Hugo site like this one into a PWA.

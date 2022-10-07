@@ -7,6 +7,7 @@ tags = [
     "devops",
     "docker"
 ]
+images = ['images/apple-touch-icon-152x152.png','images/splash.png']
 +++
 
 ## Scenario
