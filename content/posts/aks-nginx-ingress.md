@@ -1,8 +1,8 @@
 +++
 author = "Antti Viitala"
-title = "Azure Kubernetes Service, NGINX ingress and DNS"
+title = "AKS/GKE, NGINX ingress and DNS"
 date = "2022-09-12"
-description = "High-level notes on how to configure an NGINX ingress for an AKS cluster, including appropriate DNS records."
+description = "High-level notes on how to configure an NGINX ingress for an AKS or GKE cluster, including appropriate DNS records."
 tags = [
     "azure",
     "kubernetes",
@@ -53,7 +53,8 @@ end
 ## Pre-requisites
 
 * Local tools: ```kubectl```, ```helm```
-* Running AKS cluster and credentials to control it
+* Running AKS or GKE cluster and credentials to control it
+* If on GCP: Kubernetes Engine Admin role
 * Cluster has the application namespaces created and required components running in them
 
 
@@ -63,8 +64,8 @@ end
 
 1. **Services:** Change the desired front service to be exposed to type ```ClusterIP```
 1. **Ingress controller:** In a separate ```ingress``` namespace, create the ingress controller pods (=nginx) with a Helm chart
-1. **Ingress controller:** Create a static public IP resource
-1. **Ingress controller:** Configure the ingress controller to use a static public IP
+1. **Ingress controller:** (AKS only) Create a static public IP resource
+1. **Ingress controller:** (AKS only) Configure the ingress controller to use a static public IP
 1. **Ingress controller:** Configure an ingress route (k8s resource of kind ```Ingress```) that points to the desired service
 1. **TSL/SSL:** Set up secrets in each relevant namespace for TSL
 1. **TSL/SSL:** Configure the ingress routes to use the TSL cert
@@ -81,9 +82,11 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
   --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-health-probe-request-path"=/healthz
 ```
 
-## Creating a static public IP
+## Creating a static public IP (AKS)
 
-**Note**: This IP **must** be located in ***the cluster's own resource group***, which is separate from the RG the cluster sits in. Once the cluster is created, you may have to request for access to the cluster RG separately. To find out its name, run the following command:
+**Note on GCP**: In GCP GKE this step is not required, executing the ```helm install``` from above will provision a load balancer automatically. However, you will need ```Kubernetes Engine Admin``` role on the project to execute the command.
+
+**Note**: In Azure, the IP **must** be located in ***the cluster's own resource group***, which is separate from the RG the cluster sits in. Once the cluster is created, you may have to request for access to the cluster RG separately. To find out its name, run the following command:
 
 ```shell
 az aks show \
@@ -106,7 +109,7 @@ az network public-ip create \
 
 ```
 
-## Configure the ingress controller to use a static public IP
+## Configure the ingress controller to use a static public IP (AKS)
 
 This can also be done with an initialization parameter during installation if the IP already exists.
 
