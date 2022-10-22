@@ -6,12 +6,10 @@ description = "Guide on adding settings and properties to a watch face to provid
 tags = [
     "development"
 ]
-thumbnail = "/content/hero.png"
-images = ["/content/hero.png"]
+thumbnail = "/content/hero.jpg"
+images = ["/content/hero.jpg"]
 series = []
 +++
-
-![header](/content/hero.png)
 
 ## Objective
 
