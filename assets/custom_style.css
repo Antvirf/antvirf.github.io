@@ -41,11 +41,24 @@ body.colorscheme-dark .highlight pre {
 }
 
 @media print {
+    * {
+      color-scheme: light;
+      prefers-color-scheme: light;
+      color: black;
+      background-color: transparent;
+    }
+    :root {
+      background-color: white !important;
+  }
+
     body * {
       visibility: hidden;
     }
     #container-for-print * {
+
+      background-color: transparent;
       visibility: visible;
+      /* color: black; */
     }
     #container-for-print {
       position: absolute;
@@ -58,6 +71,5 @@ body.colorscheme-dark .highlight pre {
     .fa, .fa-link, .sr-only {
         visibility: hidden !important;
     }
-
   }
   
