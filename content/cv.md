@@ -9,27 +9,29 @@ author = "Antti Viitala"
 # Antti Viitala
 
 * 🇭🇰 Hong Kong based (PR) | 🇫🇮 Finnish citizen
-* Solution architect and technology consultant within financial services, ~5 years of experience  
+* Solution architect and technology consultant focused on focus on CI/CD, cloud infrastructure and backend system design
+* ~5 years of experience within consulting for financial services
 * Lead DevOps at Synpulse8 with our stack of Azure, GitHub Actions, JFrog and SonarCloud
-* Specific focus on backend system design, integration, CI/CD and cloud infrastructure
 * Experienced and fluent at working with stakeholders of all levels across business and technology
 * Effective and driven learner, able to take new topics/technologies to a working level very quickly
 
 ## Key skills & interests
- 
-* **Tech platforms and tools:** Azure | GitHub Actions | Docker | Kubernetes | JFrog | AWS | Atlassian (Jira/Confluence) | Jenkins
-* **Programming languages:** Python (backend) | Bash | Terraform | DAML | basic SQL/NoSQL (mongoDB) | Workflow languages (yaml) | HTML/CSS | VBA
+
+* **Tech platforms and tools:** Azure | GitHub Actions | Docker | Kubernetes | JFrog | GCP | Atlassian (Jira/Confluence) | Jenkins
+* **Programming languages:** Python | Bash/Shell | YAML | TOML | basic SQL/NoSQL (mongoDB) | HTML/CSS/JS | VBA | Terraform | DAML
 * **Languages:** English 🇬🇧 | Finnish 🇫🇮
-* **Personal interests:** Ultrarunning 🏃 | Swimming 🏊 | Esports/FPS 🔫 | Electric guitar🎸
+* **Personal interests:** Ultra running 🏃 | Swimming 🏊 | Esports/FPS 🔫 | Electric guitar🎸
+
+With Kubernetes I have experience primarily with AKS, though I have also set up and ran simpler workloads on AWS EKS, GCP GKE and Linode LKE. Some of the applications I have configured and have familiarity with are [nginx-ingress](https://github.com/kubernetes/ingress-nginx), [cert-manager](https://github.com/cert-manager/cert-manager), [external-dns](https://github.com/kubernetes-sigs/external-dns) with Azure DNS, [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) with Azure and GitHub providers, [redis](https://github.com/redis/redis), [loki-stack](https://artifacthub.io/packages/helm/grafana/loki-stack) and [kubernetes-dashboard](https://github.com/kubernetes/dashboard). For cluster management I'm a huge fan of [K9S](https://k9scli.io/).
 
 ## Work experience & education
 
 ### 🇭🇰 [**Synpulse8 (S8)**](https://synpulse8.com/) [03-2021 - Present]
 
-#### **Solution Architect (Vice President)** - System design, devops, CI/CD, cloud, software development
+#### **Solution Architect (Vice President)** - Devops, CI/CD, cloud, system design & software development
 
 * S8 Operating model definition: devops, tech stack (incl. licensing), architecture principles, security policies
-* Set up, administration and operation of our CI/CD pipelines and cloud infra (Using GitHub, Azure, JFrog)
+* Set up, administration and operation of our CI/CD pipelines and cloud infra, for example our internal product development clusters (Azure, Kubernetes, GitHub Actions, JFrog)
 * Architecture/infra/devops for a financial-services focused risk analytics visualization app (Azure, Kubernetes, GitHub Actions, front: Flutter(PWA) / back : Spring Boot, SonarCloud)
 * Infra, architecture and development of a [DAML](https://www.digitalasset.com/developers)-based collateral management system MVP
 * Various internal initiatives, e.g. creating [hiring challenges site](https://challenges.synpulse8.com/) with Hugo and Azure Static Web Apps
