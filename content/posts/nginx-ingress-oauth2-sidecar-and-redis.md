@@ -1,7 +1,8 @@
 +++
 author = "Antti Viitala"
 title = "Multi-domain OAuth2 Proxy configuration with Redis cookie storage"
-date = "2022-11-23"
+draft = true
+date = "2022-11-28"
 description = "Building on top of the basics, this article describes an AKS cluster configuration using nginx-ingress and OAuth2 proxy - with an NGINX sidecar - to enable serving multiple subdomains from a single authentication proxy. Session cookie storage is implemented with Redis, as some OIDC providers like Azure create and send huge cookies that are too large for many web servers (including NGINX) by default."
 tags = [
     "kubernetes",
