@@ -143,7 +143,7 @@ spec:
             name: oauth2-proxy-nginx
       containers:
         - name: oauth2-proxy
-          image: quay.io/oauth2-proxy/oauth2-proxy:v7.2.0
+          image: quay.io/oauth2-proxy/oauth2-proxy:v7.4.0
           imagePullPolicy: Always
           args:
           # This enables the redirect container
