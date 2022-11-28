@@ -13,7 +13,7 @@ enableGitInfo = true
 
 # Enable Utteranc.es comments
 [params.utterances]
-  repo = "https://github.com/Antvirf/antvirf.github.io"
+  repo = "Antvirf/antvirf.github.io"
   issueTerm = "url"
   label = "comment"
   theme = "preferred-color-scheme"
