@@ -85,7 +85,10 @@ code = "aviitala"
 childsrc = ["'self'"]
 fontsrc = ["'self'", "https://fonts.gstatic.com", "https://cdn.jsdelivr.net/"]
 formaction = ["'self'"]
-framesrc = ["'self'"]
+framesrc = [
+  "'self'",
+  "https://utteranc.es/"
+  ]
 imgsrc = [
   "'self'",
   "http://aviitala.goatcounter.com",
