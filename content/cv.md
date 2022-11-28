@@ -34,7 +34,7 @@ With Kubernetes I have experience primarily with AKS, though I have also set up 
 * Set up, administration and operation of our CI/CD pipelines and cloud infra, for example our internal product development clusters (Azure, Kubernetes, GitHub Actions, JFrog)
 * Architecture/infra/devops for a financial-services focused risk analytics visualization app (Azure, Kubernetes, GitHub Actions, front: Flutter(PWA) / back : Spring Boot, SonarCloud)
 * Infra, architecture and development of a [DAML](https://www.digitalasset.com/developers)-based collateral management system MVP
-* Various internal initiatives, e.g. creating [hiring challenges site](https://challenges.synpulse8.com/) with Hugo and Azure Static Web Apps
+* Various internal initiatives: creating websites/portals/webapps with e.g. Hugo and Azure Static Web Apps
 
 #### Solution Architect (Senior Analyst) - System design, software development
 
