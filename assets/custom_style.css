@@ -13,12 +13,36 @@ a {
     color: orange;
 }
 
+body.colorscheme-dark .navigation {
+  background-color: #212121;
+}
+body.colorscheme-light .navigation {
+  background-color: #fafafa;
+}
+
+@media only screen and (max-width: 768px) and (prefers-color-scheme: dark) {
+    .navigation {
+        position: fixed;
+        top: 0;
+        height: 4rem;
+  }
+}
+
+@media only screen and (max-width: 768px) and (prefers-color-scheme: light) {
+    .navigation {
+          position: fixed;
+          top: 0;
+          height: 4rem;
+      }
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
-        background-color: #424242 !important;
+        background-color: #212121 !important;
     }
   }
-  @media (prefers-color-scheme: light) {
+
+@media (prefers-color-scheme: light) {
     :root {
         background-color: #fafafa !important;
     }
