@@ -3,6 +3,13 @@ h1, h2, h3, h4, h5, h6, p, body, a, a.navigation-title {
     font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
 }
 
+@media only screen and (max-width: 768px) {
+    .qrcode {
+      margin: auto;
+      width: 90%;
+  }
+}
+
 body.colorscheme-dark a,
 body.colorscheme-dark .navigation a:hover,
 body.colorscheme-light .navigation a:hover {
