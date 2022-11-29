@@ -63,7 +63,7 @@ function setTheme(theme) {
         waitForElm('.utterances-frame').then((iframe) => {
             iframe.contentWindow.postMessage(message, 'https://utteranc.es');
         })
-        
+        document.querySelector("meta[name='theme-color']").content = "#212121";
     }
     else {
         const message = {
@@ -73,6 +73,7 @@ function setTheme(theme) {
         waitForElm('.utterances-frame').then((iframe) => {
             iframe.contentWindow.postMessage(message, 'https://utteranc.es');
         })
+        document.querySelector("meta[name='theme-color']").content = "#fafafa";
         
     }
     
