@@ -7,6 +7,31 @@ slug = "projects"
 
 ***
 
+## [garmin-explorer-watch-face](https://github.com/Antvirf/garmin-explorer-watch-face) (2022-12-21)
+
+![downloads](https://raw.githubusercontent.com/Antvirf/garmin-explorer-watch-face/main/badges/downloads.svg)
+![rating](https://raw.githubusercontent.com/Antvirf/garmin-explorer-watch-face/main/badges/rating.svg)
+
+Explorer-style watch face for Fenix 6 Sapphire and others. Built with **Monkey C**.
+
+***
+
+## [garmin-watch-face-guide](https://github.com/Antvirf/garmin-watch-face-guide) (2022-10-06)
+
+![downloads](https://raw.githubusercontent.com/Antvirf/garmin-watch-face-guide/main/badges/downloads.svg)
+![rating](https://raw.githubusercontent.com/Antvirf/garmin-watch-face-guide/main/badges/rating.svg)
+
+Repo for the Matter Metrics watch face created for a guide post. Built with **Monkey C**.
+
+***
+
+## [k8s-oauth-proxy-example](https://github.com/Antvirf/k8s-oauth-proxy-example) (2022-10-03)
+
+
+Repo with basic configuration for K8S OAuth2 Proxy for use with NGINX Ingress.
+
+***
+
 ## [webhook-forwarder-go](https://github.com/Antvirf/webhook-forwarder-go) (2022-09-24)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Antvirf_webhook-forwarder-go&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Antvirf_webhook-forwarder-go)
@@ -26,11 +51,12 @@ MS Learning-path based notes for AZ-104 administrator.
 ## [webhook-forwarder-python](https://github.com/Antvirf/webhook-forwarder-python) (2022-08-07)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Antvirf_webhook-forwarder&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Antvirf_webhook-forwarder)
-![Pytests](https://github.com/Antvirf/webhook-forwarder/actions/workflows/python-tests.yml/badge.svg)
-![Pytest coverage](https://raw.githubusercontent.com/Antvirf/webhook-forwarder-python/main/tests/coverage.svg)
 ![CodeQL](https://github.com/Antvirf/webhook-forwarder/actions/workflows/codeql.yml/badge.svg)
-![Python Versions](https://img.shields.io/badge/python-3.8%20|%203.9%20|%203.10%20-blue)
+![Vulnerabilities](https://snyk.io/test/github/Antvirf/webhook-forwarder-python/badge.svg)
+![Pytests](https://github.com/Antvirf/webhook-forwarder/actions/workflows/python-tests.yml/badge.svg)
+![Pytest coverage](https://raw.githubusercontent.com/Antvirf/webhook-forwarder-python/main/coverage.svg)
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/Antvirf/webhook-forwarder-python/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Antvirf/webhook-forwarder-python/tree/main)
+![Python Versions](https://img.shields.io/badge/python-3.8%20|%203.9%20|%203.10%20-blue)
 
 FastAPI based Github webhook forwarder with sender IP and signature checking. Built with **Python**.
 
@@ -54,6 +80,8 @@ Simple util to add/remove work applications from macOS dock. Built with **Python
 
 ## [posture-detection](https://github.com/Antvirf/posture-detection) (2022-02-27)
 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Antvirf_posture-detection&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Antvirf_posture-detection)
+[![CodeQL](https://github.com/Antvirf/posture-detection/actions/workflows/codeql.yml/badge.svg)](https://github.com/Antvirf/posture-detection/actions/workflows/codeql.yml)
 
 Detecting slouching with the webcam and ML. Built with **Python**.
 
