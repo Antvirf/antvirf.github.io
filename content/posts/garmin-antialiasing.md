@@ -6,8 +6,8 @@ description = ""
 tags = [
     "development"
 ]
-thumbnail = "/content/header.png" ## UPDATE?
-images = ["/content/header.png"] ## UPDATE?
+thumbnail = "/content/antialias-comparison.png" ## UPDATE?
+images = ["/content/antialias-comparison.png"] ## UPDATE?
 series = []
 +++
 
