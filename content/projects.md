@@ -7,6 +7,13 @@ slug = "projects"
 
 ***
 
+## [data-scraping-system](https://github.com/Antvirf/data-scraping-system) (2023-02-04)
+
+
+Practice project for different experiments. Built with **Python**.
+
+***
+
 ## [garmin-explorer-watch-face](https://github.com/Antvirf/garmin-explorer-watch-face) (2022-12-21)
 
 ![downloads](https://raw.githubusercontent.com/Antvirf/garmin-explorer-watch-face/main/badges/downloads.svg)
@@ -75,15 +82,6 @@ Github pages site. Built with **SCSS**.
 
 
 Simple util to add/remove work applications from macOS dock. Built with **Python**.
-
-***
-
-## [posture-detection](https://github.com/Antvirf/posture-detection) (2022-02-27)
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Antvirf_posture-detection&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Antvirf_posture-detection)
-[![CodeQL](https://github.com/Antvirf/posture-detection/actions/workflows/codeql.yml/badge.svg)](https://github.com/Antvirf/posture-detection/actions/workflows/codeql.yml)
-
-Detecting slouching with the webcam and ML. Built with **Python**.
 
 ***
 

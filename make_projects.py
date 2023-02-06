@@ -105,6 +105,10 @@ def convert_list_of_projects_to_markdown_entry(api_response):
     markdown_entries = []
 
     for project in api_response:
+        # ignore if fork
+        if project["fork"] == True:
+            continue
+
         markdown_entries.append(
             convert_project_response_to_markdown_entry(project)
         )
@@ -124,6 +128,7 @@ def convert_list_of_projects_to_markdown_entry(api_response):
 
 def convert_project_response_to_markdown_entry(project):
     '''Takes a project entry from the GitHub API response and returns a markdown_entry entry.'''
+
     markdown_entry = MarkdownEntryClass(
         date=project['created_at'][:10],
         branch=project['default_branch'],
