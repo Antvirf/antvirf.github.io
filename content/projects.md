@@ -7,6 +7,18 @@ slug = "projects"
 
 ***
 
+## [gh-environment-manager](https://github.com/Antvirf/gh-environment-manager) (2023-02-07)
+
+[![PyPI version](https://badge.fury.io/py/gh-env-manager.svg)](https://badge.fury.io/py/gh-env-manager)
+![Pytest coverage](https://raw.githubusercontent.com/Antvirf/gh-environment-manager/main/.github/badges/coverage.svg)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Antvirf_gh-environment-manager&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Antvirf_gh-environment-manager)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Antvirf_gh-environment-manager&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Antvirf_gh-environment-manager)
+![Python](https://img.shields.io/badge/python-3.9%20-blue)
+
+A CLI tool to update GitHub Actions secrets and variables from a YAML file. Built with **Python**.
+
+***
+
 ## [data-scraping-system](https://github.com/Antvirf/data-scraping-system) (2023-02-04)
 
 
