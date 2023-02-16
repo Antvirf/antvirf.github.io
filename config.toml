@@ -98,7 +98,8 @@ imgsrc = [
   "https://img.shields.io",
   "https://sonarcloud.io",
   "https://dl.circleci.com",
-  "https://snyk.io"
+  "https://snyk.io",
+  "https://badge.fury.io"
   ]
 objectsrc = ["'none'"]
 stylesrc = [
