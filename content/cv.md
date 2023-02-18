@@ -9,20 +9,22 @@ author = "Antti Viitala"
 # Antti Viitala
 
 * 🇭🇰 Hong Kong based (PR) | 🇫🇮 Finnish citizen
-* Technology consultant / solution architect focused on focus on devops, CI/CD, cloud infrastructure and backend system design
+* Technology consultant / solution architect focused on devops, CI/CD and cloud infrastructure
 * ~5 years of experience within consulting for financial services
 * Lead DevOps at Synpulse8 and support multiple projects and internal products working primarily with Azure, AWS, Kubernetes, GitHub Actions, JFrog and SonarCloud
 * Experienced and fluent at working with stakeholders of all levels across business and technology
 * Effective and driven learner, able to take new topics/technologies to a working level very quickly
 
-## Key skills & interests
+## Key skills, interests & personal projects
 
-* **Tech platforms and tools:** Azure | GitHub Actions | Docker | Kubernetes | JFrog | GCP | Atlassian (Jira/Confluence) | Jenkins
+* **Cloud providers:** Azure | AWS | GCP
+* **Tech platforms and tools:** GitHub Actions | Docker | Kubernetes | JFrog | Atlassian (Jira/Confluence) | Jenkins
 * **Programming languages:** Python | Bash/Shell | YAML | TOML | basic SQL/NoSQL (mongoDB) | HTML/CSS/JS | VBA | Terraform | DAML
 * **Languages:** English 🇬🇧 | Finnish 🇫🇮
-* **Personal interests:** Ultra running 🏃 | Swimming 🏊 | Esports/FPS 🔫 | Electric guitar🎸
+* **Personal projects**: See [my projects page](https://aviitala.com/projects/) for more information
+* **Other interests:** Ultra running 🏃 | Swimming 🏊 | Esports/FPS 🔫 | Electric guitar🎸
 
-With Kubernetes I have experience primarily with AKS and EKS, though I have also set up and ran simpler workloads on GCP GKE and Linode LKE. Some of the applications I have configured and have familiarity with are [nginx-ingress](https://github.com/kubernetes/ingress-nginx), [cert-manager](https://github.com/cert-manager/cert-manager), [external-dns](https://github.com/kubernetes-sigs/external-dns) with Azure DNS, [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) with Azure and GitHub providers, [redis](https://github.com/redis/redis), [loki-stack](https://artifacthub.io/packages/helm/grafana/loki-stack) and [kubernetes-dashboard](https://github.com/kubernetes/dashboard). For cluster management I'm a huge fan of [K9S](https://k9scli.io/).
+With Kubernetes I have experience primarily with AKS and EKS, though I have also set up and ran simpler workloads on GCP GKE and Linode LKE. Some of the applications I have configured and have familiarity with are [nginx-ingress](https://github.com/kubernetes/ingress-nginx), [cert-manager](https://github.com/cert-manager/cert-manager), [external-dns](https://github.com/kubernetes-sigs/external-dns) with Azure DNS, [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) with Azure and GitHub providers, [redis](https://github.com/redis/redis), [loki-stack](https://artifacthub.io/packages/helm/grafana/loki-stack), [prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) and [kubernetes-dashboard](https://github.com/kubernetes/dashboard). For cluster management I'm a huge fan of [K9S](https://k9scli.io/).
 
 ## Work experience & education
 
@@ -32,7 +34,7 @@ With Kubernetes I have experience primarily with AKS and EKS, though I have also
 
 * S8 Operating model definition: devops, tech stack (incl. licensing), architecture principles, security policies
 * Set up, administration and operation of our CI/CD pipelines and cloud infra, for example our internal product development clusters (Azure, Kubernetes, GitHub Actions, JFrog)
-* Architecture/infra/devops for a financial-services focused risk analytics visualization app (Azure, Kubernetes, GitHub Actions, front: Flutter(PWA) / back : Spring Boot, SonarCloud)
+* Devops and infra-as-code for a financial-services focused risk analytics visualization app (Azure/AWS, AKS/EKS, GitHub Actions, front: React / back: Spring, Apache Pinot, Terraform, Airflow)
 * Devops and infra-as-code for microservices-based financial application (AWS EKS, AWS Aurora DBs, Kubernetes, Terraform, GitHub Actions)
 * Infra, architecture and development of a [DAML](https://www.digitalasset.com/developers)-based collateral management system MVP
 * Various internal initiatives: creating websites/portals/webapps with e.g. Hugo and Azure Static Web Apps
