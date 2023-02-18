@@ -17,9 +17,9 @@ Unfortunately, for both my personal repositories and at work, the problem is tha
 
 Thankfully, GitHub's REST API is extensive and offers [endpoints to query the logs of workflow runs](https://docs.github.com/en/rest/actions/workflow-runs?apiVersion=2022-11-28#list-workflow-runs-for-a-repository). Primarily with this endpoint in mind, I set out to put together a simple set of scripts to fetch large numbers of workflow logs, and then search them for particular content - in this case, the word `deprecated`.
 
-After about two hours of effort - and an hour-long break in between after I reached [GitHub API rate limits](https://docs.github.com/en/rest/overview/resources-in-the-rest-api?apiVersion=2022-11-28#rate-limiting) I had something workable in the contents of this repository.
+After about two hours of effort - and an hour-long break in between after I reached [GitHub API rate limits](https://docs.github.com/en/rest/overview/resources-in-the-rest-api?apiVersion=2022-11-28#rate-limiting) I had something workable in the contents of [this repository - gh-actions-log-search](https://github.com/Antvirf/gh-actions-log-search).
 
-## What does the code do in detail?
+## What does [the code](https://github.com/Antvirf/gh-actions-log-search) do in detail?
 
 If you're interested in how to *run* the code, check the [**Quick start** section of the docs](https://github.com/Antvirf/gh-actions-log-search#usage---clone-install-dependencies-run).
 
