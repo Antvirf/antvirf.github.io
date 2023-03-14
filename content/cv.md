@@ -9,17 +9,17 @@ author = "Antti Viitala"
 # Antti Viitala
 
 * 🇭🇰 Hong Kong based (PR) | 🇫🇮 Finnish citizen
-* Technology consultant / solution architect focused on devops, CI/CD and cloud infrastructure
-* ~5 years of experience within consulting for financial services
+* Platform engineer focused on devops, CI/CD and cloud infrastructure
 * Lead DevOps at Synpulse8 and support multiple projects and internal products working primarily with Azure, AWS, Kubernetes, GitHub Actions, JFrog and SonarCloud
+* ~5 years of experience within consulting for financial services
 * Experienced and fluent at working with stakeholders of all levels across business and technology
 * Effective and driven learner, able to take new topics/technologies to a working level very quickly
 
 ## Key skills, interests & personal projects
 
-* **Cloud providers:** Azure | AWS | GCP
+* **Cloud providers:** AWS | Azure | GCP (basics only)
 * **Tech platforms and tools:** GitHub Actions | Docker | Kubernetes | JFrog | Atlassian (Jira/Confluence) | Jenkins
-* **Programming languages:** Python | Bash/Shell | YAML | TOML | basic SQL/NoSQL (mongoDB) | HTML/CSS/JS | VBA | Terraform | DAML
+* **Programming languages:** Terraform | Python | Bash/Shell | YAML | TOML | basic SQL/NoSQL (mongoDB) | HTML/CSS/JS | VBA | DAML
 * **Languages:** English 🇬🇧 | Finnish 🇫🇮
 * **Personal projects**: See [my projects page](https://aviitala.com/projects/) for more information
 * **Other interests:** Ultra running 🏃 | Swimming 🏊 | Esports/FPS 🔫 | Electric guitar🎸
@@ -32,10 +32,11 @@ With Kubernetes I have experience primarily with AKS and EKS, though I have also
 
 #### **Solution Architect (Vice President)** - Devops, CI/CD, cloud, system design & software development
 
-* S8 Operating model definition: devops, tech stack (incl. licensing), architecture principles, security policies
-* Set up, administration and operation of our CI/CD pipelines and cloud infra, for example our internal product development clusters (Azure, Kubernetes, GitHub Actions, JFrog)
+* Devops and infra-as-code for a mobile application with a CMS API backend (AWS App Runner / Aurora / WAF / ECR / S3 etc. managed via Terraform, GitHub Actions, JavaScript)
+* Devops and infra-as-code for microservices-based financial application (AWS EKS / AWS Aurora DBs / S3 etc. managed via Terraform and Kubernetes, GitHub Actions)
 * Devops and infra-as-code for a financial-services focused risk analytics visualization app (Azure/AWS, AKS/EKS, GitHub Actions, front: React / back: Spring, Apache Pinot, Terraform, Airflow)
-* Devops and infra-as-code for microservices-based financial application (AWS EKS, AWS Aurora DBs, Kubernetes, Terraform, GitHub Actions)
+* Set up, administration and operation of our CI/CD pipelines and cloud infra, for example our internal product development clusters (Azure, Kubernetes, GitHub Actions, JFrog)
+* S8 Operating model definition: devops, tech stack (incl. licensing), architecture principles, security policies
 * Infra, architecture and development of a [DAML](https://www.digitalasset.com/developers)-based collateral management system MVP
 * Various internal initiatives: creating websites/portals/webapps with e.g. Hugo and Azure Static Web Apps
 
