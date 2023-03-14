@@ -57,7 +57,7 @@ With Kubernetes I have experience primarily with AKS and EKS, though I have also
 
 ### 🇫🇮 [Finnish Defence Forces](https://puolustusvoimat.fi/en/frontpage) (national service)  [07-2018 - 12-2018]
 
-### 🇭🇰 [Quinlan & Associates](https://www.quinlanandassociates.com/)  [01-2018 - 05-2018] - Research report [#1](https://www.quinlanandassociates.com/platinum-fools-gold/), [#2](https://www.quinlanandassociates.com/insights-banking-on-the-cloud/)
+### 🇭🇰 [Quinlan & Associates](https://www.quinlanandassociates.com/)  [01-2018 - 05-2018] - Research report [#1](https://www.quinlanandassociates.com/fools-gold/), [#2](https://www.quinlanandassociates.com/banking-on-the-cloud/)
 
 ### 🇭🇰 [Bloomberg L.P.](https://www.bloomberg.com/company/) Analytics project [07-2017 - 05-2018] - [Award](https://ipo.hkust.edu.hk/whats-happening/news/award-presentation-ceremony-outstanding-rmbi-capstone-projects-20172018)
 
