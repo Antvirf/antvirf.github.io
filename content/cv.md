@@ -9,8 +9,8 @@ author = "Antti Viitala"
 # Antti Viitala
 
 * 🇭🇰 Hong Kong based (PR) | 🇫🇮 Finnish citizen
-* Platform engineer focused on devops, CI/CD and cloud infrastructure
-* Lead DevOps at Synpulse8 and support multiple projects and internal products working primarily with Azure, AWS, Kubernetes, GitHub Actions, JFrog and SonarCloud
+* Well-rounded engineer focused on devops, CI/CD and cloud infrastructure
+* Lead Infra & DevOps at Synpulse8 and support multiple projects and internal products working primarily with AWS, Kubernetes, GitHub Actions, JFrog and SonarCloud
 * ~5 years of experience within consulting for financial services
 * Experienced and fluent at working with stakeholders of all levels across business and technology
 * Effective and driven learner, able to take new topics/technologies to a working level very quickly
@@ -19,12 +19,14 @@ author = "Antti Viitala"
 
 * **Cloud providers:** AWS | Azure | GCP (basics only)
 * **Tech platforms and tools:** GitHub Actions | Docker | Kubernetes | JFrog | Atlassian (Jira/Confluence) | Jenkins
-* **Programming languages:** Terraform | Python | Bash/Shell | YAML | TOML | basic SQL/NoSQL (mongoDB) | HTML/CSS/JS | VBA | DAML
+* **Programming languages/frameworks:**
+  * Strong: Python | Terraform | Bash/Shell | YAML | TOML
+  * Basic: Golang | HTML/CSS/JS | Svelte/SvelteKit | VBA | DAML
 * **Languages:** English 🇬🇧 | Finnish 🇫🇮
 * **Personal projects**: See [my projects page](https://aviitala.com/projects/) for more information
 * **Other interests:** Ultra running 🏃 | Swimming 🏊 | Esports/FPS 🔫 | Electric guitar🎸
 
-With Kubernetes I have experience primarily with AKS and EKS, though I have also set up and ran simpler workloads on GCP GKE and Linode LKE. Some of the applications I have configured and have familiarity with are [nginx-ingress](https://github.com/kubernetes/ingress-nginx), [cert-manager](https://github.com/cert-manager/cert-manager), [external-dns](https://github.com/kubernetes-sigs/external-dns) with Azure DNS, [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) with Azure and GitHub providers, [redis](https://github.com/redis/redis), [loki-stack](https://artifacthub.io/packages/helm/grafana/loki-stack), [prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) and [kubernetes-dashboard](https://github.com/kubernetes/dashboard). For cluster management I'm a huge fan of [K9S](https://k9scli.io/).
+With Kubernetes I have experience primarily with AKS and EKS, though I have also set up and ran simpler workloads on GCP GKE and Linode LKE. Some of the applications I have configured and have familiarity with are [kubernetes-autoscaler](https://github.com/kubernetes/autoscaler), [nginx-ingress](https://github.com/kubernetes/ingress-nginx), [cert-manager](https://github.com/cert-manager/cert-manager), [external-dns](https://github.com/kubernetes-sigs/external-dns) with Azure DNS, [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) with Azure and GitHub providers, [redis](https://github.com/redis/redis), [loki-stack](https://artifacthub.io/packages/helm/grafana/loki-stack), [prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) and [kubernetes-dashboard](https://github.com/kubernetes/dashboard). For cluster management I'm a huge fan of [K9S](https://k9scli.io/).
 
 ## Work experience & education
 
@@ -33,7 +35,7 @@ With Kubernetes I have experience primarily with AKS and EKS, though I have also
 #### **Solution Architect (Vice President)** - Devops, CI/CD, cloud, system design & software development
 
 * Devops and infra-as-code for a mobile application with a CMS API backend (AWS App Runner / Aurora / WAF / ECR / S3 etc. managed via Terraform, GitHub Actions, JavaScript)
-* Devops and infra-as-code for microservices-based financial application (AWS EKS / AWS Aurora DBs / S3 etc. managed via Terraform and Kubernetes, GitHub Actions)
+* Devops and infra-as-code for several microservices-based financial applications (primarily using AWS EKS / AWS Aurora DBs / S3 etc. managed via Terraform and Kubernetes, GitHub Actions)
 * Devops and infra-as-code for a financial-services focused risk analytics visualization app (Azure/AWS, AKS/EKS, GitHub Actions, front: React / back: Spring, Apache Pinot, Terraform, Airflow)
 * Set up, administration and operation of our CI/CD pipelines and cloud infra, for example our internal product development clusters (Azure, Kubernetes, GitHub Actions, JFrog)
 * S8 Operating model definition: devops, tech stack (incl. licensing), architecture principles, security policies
