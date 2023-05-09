@@ -7,6 +7,20 @@ slug = "projects"
 
 ***
 
+## [dotfiles](https://github.com/Antvirf/dotfiles) (2023-04-22)
+
+
+Setup scripts to get some important tools installed. Built with **Shell**.
+
+***
+
+## [resource-portal-react-pocketbase](https://github.com/Antvirf/resource-portal-react-pocketbase) (2023-02-28)
+
+
+Basic resource portal intended for self-service creation of database instances, created with a React and Bootstrap-based frontend on top of a PocketBase backend. Built with **JavaScript**.
+
+***
+
 ## [gh-actions-log-search](https://github.com/Antvirf/gh-actions-log-search) (2023-02-18)
 
 
@@ -23,13 +37,6 @@ Rough script to search for a particular term among GitHub Actions logs from mult
 ![Python](https://img.shields.io/badge/python-3.9%20-blue)
 
 A CLI tool to update GitHub Actions secrets and variables from a YAML file. Built with **Python**.
-
-***
-
-## [data-scraping-system](https://github.com/Antvirf/data-scraping-system) (2023-02-04)
-
-
-Practice project for different experiments. Built with **Python**.
 
 ***
 
@@ -93,7 +100,7 @@ FastAPI based Github webhook forwarder with sender IP and signature checking. Bu
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Antvirf_antvirf.github.io&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Antvirf_antvirf.github.io)
 [![Deploy Hugo site to Pages](https://github.com/Antvirf/antvirf.github.io/actions/workflows/gh-pages.yaml/badge.svg)](https://github.com/Antvirf/antvirf.github.io/actions/workflows/gh-pages.yaml)
 
-Github pages site. Built with **SCSS**.
+Personal GitHub Pages site. Built with **SCSS**.
 
 ***
 

@@ -38,6 +38,9 @@ class MarkdownEntryClass:
         return self
 
     def add_verbose_line(self, line, continue_previous_line=False):
+        if line is None:
+            return self
+
         'Add a line of content plus add a dot at the end if not included in the content itself.'
         while continue_previous_line:
             if self.content[-1] == "\n":

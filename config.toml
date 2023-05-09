@@ -157,6 +157,11 @@ name = "Projects"
 weight = 3
 url = "projects/"
 
+[[languages.en.menu.main]]
+name = "OSS Contributions"
+weight = 4
+url = "open-source/"
+
 # [[languages.en.menu.main]]
 # name = "Contact me"
 # weight = 5
