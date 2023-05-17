@@ -16,8 +16,9 @@ body.colorscheme-light .navigation a:hover {
     color: orange;
 }
 
-a {
+a, a:hover {
     color: orange;
+    text-decoration: none;
 }
 
 body.colorscheme-dark .navigation {
