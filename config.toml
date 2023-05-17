@@ -132,12 +132,14 @@ name = "Github"
 icon = "fa fa-2x fa-github"
 weight = 1
 url = "https://github.com/Antvirf/"
+target = "_blank"
 
 [[params.social]]
 name = "LinkedIn"
 icon = "fa fa-2x fa-linkedin"
 weight = 4
 url = "https://www.linkedin.com/in/anttiviitala/"
+target = "_blank"
 
 [languages.en]
 languageName = ":uk:"
