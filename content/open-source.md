@@ -11,6 +11,7 @@ Standard format:
 
 I'm not a prolific open-source contributor, but I try to contribute whenever I come across issues I can help resolve. Here are some of the contributions I've made to public open-source projects beyond my own repositories:
 
+* [`fluxcd/website`](https://github.com/fluxcd): [Update GitHub Actions examples syntax + actions versions](https://github.com/fluxcd/website/pull/1507)
 * [`hashicorp/terraform-provider-aws`](https://github.com/hashicorp/terraform-provider-aws): [Ignore client ID order in OpenID connect provider](https://github.com/hashicorp/terraform-provider-aws/pull/31253)
 * [`hashicorp/terraform-provider-aws`](https://github.com/hashicorp/terraform-provider-aws): [Improving docs for AWS App Runner secrets management](https://github.com/hashicorp/terraform-provider-aws/pull/29788)
 * [`terraform-aws-modules/terraform-aws-app-runner`](https://github.com/terraform-aws-modules/terraform-aws-app-runner): [Add support for runtime environment secrets](https://github.com/terraform-aws-modules/terraform-aws-app-runner/pull/5)
