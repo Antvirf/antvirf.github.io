@@ -12,7 +12,7 @@ images = ['images/apple-touch-icon-152x152.png','images/splash.png']
 
 ## What is [AWS App Runner](https://aws.amazon.com/apprunner/)?
 
-In brief, AWS App Runner is a (highly) managed service AWS offers to run your applications with as little infrastructure knowledge and maintenance as possible. You provide a [code source in one of the supported languages/frameworks](https://docs.aws.amazon.com/apprunner/latest/dg/service-source-code.html), or your [own container image via ECR](https://docs.aws.amazon.com/apprunner/latest/dg/service-source-image.html), and AWS takes care of the rest.
+In brief, AWS App Runner is a (highly) managed service AWS offers to run your applications with as little infrastructure knowledge and maintenance as possible. You provide a [code source in one of the supported languages/frameworks](https://docs.aws.amazon.com/apprunner/latest/dg/service-source-code.html), or your [own container image via ECR](https://docs.aws.amazon.com/apprunner/latest/dg/service-source-image.html), and AWS takes care of the rest. [This presentation by AWS](https://d1.awsstatic.com/events/Summits/reinvent2022/CON312_Auto-scale-your-web-application-using-AWS-App-Runner.pdf) covers the service in great detail.
 
 After working with App Runner for a few months, here's a few thoughts on what it does well and not so well. For the sake of comparison, I have used Azure App Runner before, but run most of my workloads on Kubernetes.
 
