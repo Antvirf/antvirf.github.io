@@ -1,16 +1,8 @@
 <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
 <script>
 
-    if (localStorage.getItem("colorscheme")) {
-        isDark = localStorage.getItem("colorscheme");
-    } else if (body.classList.contains('colorscheme-light') || body.classList.contains('colorscheme-dark')) {
-        isDark = body.classList.contains("colorscheme-dark") ? "dark" : "light";
-    } else {
-        isDark = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
-    }
-
     // let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    let mermaidTheme = (isDark == 'dark') ? 'dark' : 'default';
+    let mermaidTheme = 'dark';
     let mermaidConfig = {
         theme: mermaidTheme,
         logLevel: 'fatal',
