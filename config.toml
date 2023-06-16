@@ -164,6 +164,9 @@ name = "OSS Contributions"
 weight = 4
 url = "open-source/"
 
+[markup.goldmark.renderer]
+  unsafe = true
+
 # [[languages.en.menu.main]]
 # name = "Contact me"
 # weight = 5
