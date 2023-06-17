@@ -125,7 +125,7 @@ This section contains charts of constant IOPS usage vs. estimated costs for data
 
 ## Conclusion
 
-For databases that experience **low load most of the time, and only with short spikes**, RDS seems to be the better choice at this scale.  Costs-wise, even at 1 IOPS, Aurora is more expensive, and were you to run both instances at e.g. 300 IOPS, Aurora will cost almost twice as much per year. If your load spikes are relatively short and infrequent (at most, 30 min spikes every 5 hours), the bursting offered by RDS will be sufficient to handle the load.
+For databases that experience **low load most of the time, and only with short spikes**, RDS seems to be the better choice at this scale.  Costs-wise, even at 1 IOPS, Aurora is more expensive, and were you to run both instances at e.g. 300 IOPS, Aurora will cost almost twice as much per year. If your load spikes are relatively short and infrequent (at most, 30 min spikes, every 5 hours for a 100 GB database), the bursting offered by RDS will be sufficient to handle the load.
 
 Should the load grow, as long as it remains relatively consistent, RDS can be configured with provisioned IOPS that will increase performance to similar levels as Aurora - or you can increase throughput by increasing the storage capacity of the database. This is apparent from the test results of iteration 1 where RDS had its burst credits, as well as the findings of the original article where a well-configured RDS beats Aurora in terms of performance.
 
@@ -139,7 +139,7 @@ If on the other hand your **database load is highly variable and has sustained s
 
 ### Availability
 
-In a multi-az configuration, Aurora has a superior SLA of 99.99% versus 99.95% for RDS, which depending on the criticality of your workload may be valuable.
+In a multi-az configuration, Aurora has a superior SLA of 99.99% versus 99.95% for RDS, which depending on the criticality of your workload may be very significant.
 
 ### Durability
 
