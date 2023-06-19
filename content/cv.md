@@ -1,9 +1,9 @@
 +++
 title = "CV"
 description = "Antti's Curriculum Vitae"
-#date = "2022-12"
 aliases = ["about", "contact"]
 author = "Antti Viitala"
+
 +++
 
 # Antti Viitala
