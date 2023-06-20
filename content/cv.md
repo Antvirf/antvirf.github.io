@@ -6,6 +6,8 @@ author = "Antti Viitala"
 
 +++
 
+[*Download as PDF*](/CV_Viitala_Antti_202306.pdf)
+
 # Antti Viitala
 
 * 🇭🇰 Hong Kong based (PR) | 🇫🇮 Finnish citizen
