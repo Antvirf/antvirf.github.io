@@ -23,7 +23,7 @@ enableGitInfo = true
   license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
   description = "Antti Viitala personal portfolio site"
   keywords = "blog,developer,personal"
-  info = ["DevOps", "Cloud Infra & Architecture", "Professional googler"]
+  info = ["Software development", "Cloud architecture, infra & devops", "Professional googler"]
   avatarURL = "images/avatar.png"
   favicon_16 = "images/favicon-16x16.png"
   favicon_32 = "images/favicon-32x32.png"
