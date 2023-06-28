@@ -3,12 +3,11 @@ title = "CV"
 description = "Antti's Curriculum Vitae"
 aliases = ["about", "contact"]
 author = "Antti Viitala"
-
 +++
 
 [*Download as PDF*](/CV_Viitala_Antti_202306.pdf)
 
-# Antti Viitala
+# [Antti Viitala](https://aviitala.com/cv/)
 
 * 🇭🇰 Hong Kong based (PR) | 🇫🇮 Finnish citizen
 * Well-rounded engineer focused on devops, CI/CD and cloud infrastructure
@@ -25,8 +24,8 @@ author = "Antti Viitala"
   * Strong: Python | Terraform | Bash/Shell | YAML | TOML
   * Basic: Golang | HTML/CSS/JS | Svelte/SvelteKit | VBA | DAML
 * **Languages:** English 🇬🇧 | Finnish 🇫🇮
-* **Personal projects**: See [my projects page](/projects/) for more information
-* **Open-Source contributions**: See [contributions to open-source projects](/open-source/) for more information
+* **Personal projects**: See [my projects page](https://aviitala.com/projects/) for more information
+* **Open-Source contributions**: See [contributions to open-source projects](https://aviitala.com/open-source/) for more information
 * **Other interests:** Ultra running 🏃 | Swimming 🏊 | Esports/FPS 🔫 | Electric guitar🎸
 
 With Kubernetes I have experience primarily with AKS and EKS, though I have also set up and ran simpler workloads on GCP GKE and Linode LKE. Some of the applications I have configured and have familiarity with are [kubernetes-autoscaler](https://github.com/kubernetes/autoscaler), [nginx-ingress](https://github.com/kubernetes/ingress-nginx), [cert-manager](https://github.com/cert-manager/cert-manager), [external-dns](https://github.com/kubernetes-sigs/external-dns) with Azure DNS, [oauth2-proxy](https://github.com/oauth2-proxy/oauth2-proxy) with Azure and GitHub providers, [redis](https://github.com/redis/redis), [loki-stack](https://artifacthub.io/packages/helm/grafana/loki-stack), [prometheus-stack](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) and [kubernetes-dashboard](https://github.com/kubernetes/dashboard). For cluster management I'm a huge fan of [K9S](https://k9scli.io/).
