@@ -145,25 +145,25 @@ target = "_blank"
 [languages.en]
 languageName = ":uk:"
 
-[[languages.en.menu.main]]
-name = "CV"
-weight = 1
-url = "cv/"
+# [[languages.en.menu.main]]
+# name = "CV"
+# weight = 1
+# url = "cv/"
 
 [[languages.en.menu.main]]
 name = "Blog"
 weight = 2
 url = "posts/"
 
-[[languages.en.menu.main]]
-name = "Projects"
-weight = 3
-url = "projects/"
+# [[languages.en.menu.main]]
+# name = "Projects"
+# weight = 3
+# url = "projects/"
 
-[[languages.en.menu.main]]
-name = "OSS Contributions"
-weight = 4
-url = "open-source/"
+# [[languages.en.menu.main]]
+# name = "OSS Contributions"
+# weight = 4
+# url = "open-source/"
 
 [markup.goldmark.renderer]
   unsafe = true

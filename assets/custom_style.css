@@ -1,6 +1,6 @@
 
 h1, h2, h3, h4, h5, h6, p, body, a, a.navigation-title {
-    font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 @media only screen and (max-width: 768px) {
@@ -68,7 +68,7 @@ body.colorscheme-dark .highlight pre {
 @media print and (-webkit-min-device-pixel-ratio:0) {
     body, a, h1, h2, h3, h4, h5, h6, p, .navigation {
         font-size: 10pt !important;
-        font-family: 'Ubuntu', Arial, Helvetica, sans-serif !important;
+        font-family: Arial, Helvetica, sans-serif !important;
 }
 }
 
