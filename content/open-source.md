@@ -11,6 +11,7 @@ Standard format:
 
 I'm not a prolific open-source contributor, but I try to contribute whenever I come across issues I can help resolve and am happy to help keep the docs up to date. Here are some of the contributions I've made to public open-source projects beyond my own repositories:
 
+- [`pennersr/django-allauth`](https://github.com/pennersr/django-allauth): [Update/remove exception handling on provider imports to not hide errors](https://github.com/pennersr/django-allauth/pull/3536)
 * [`terraform-aws-modules/terraform-aws-rds-aurora`](https://github.com/terraform-aws-modules/terraform-aws-rds-aurora): [Update storage_type docs entry to mention I/O Optimized storage configuration](https://github.com/terraform-aws-modules/terraform-aws-rds-aurora/pull/393)
 * [`kubernetes-sigs/external-dns`](https://github.com/kubernetes-sigs/external-dns): [Update deprecated k8s apiVersions from docs](https://github.com/kubernetes-sigs/external-dns/pull/3646)
 * [`fluxcd/website`](https://github.com/fluxcd): [Update GitHub Actions examples syntax + actions versions](https://github.com/fluxcd/website/pull/1507)
