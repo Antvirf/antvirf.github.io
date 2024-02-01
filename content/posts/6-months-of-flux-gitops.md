@@ -10,7 +10,7 @@ tags = [
     "gitops",
     "flux",
 ]
-images = ['images/apple-touch-icon-152x152.png','images/splash.png']
+images = ['content/flux.png']
 +++
 
 **TL;DR GitOps is king, and once you've tried it you can't go back 👑**
