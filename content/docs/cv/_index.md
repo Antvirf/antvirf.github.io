@@ -5,6 +5,8 @@ title: CV
 
 # CV ⋅ Antti Viitala
 
+*For detailed timelines please refer to [LinkedIn](https://www.linkedin.com/in/anttiviitala)*
+
 ## Bio
 
 * Well-rounded software engineer with a focus infrastructure & devops
@@ -74,6 +76,12 @@ Some of the Kubernetes applications I have configured and have familiarity with 
   - [Outstanding capstone project award](https://ipo.hkust.edu.hk/whats-happening/news/award-presentation-ceremony-outstanding-rmbi-capstone-projects-20172018)
 - EONIQ:  Watchmaker and crowdfunding marketer (2016)
   - [Crowdfunding campaign](https://www.indiegogo.com/projects/eoniq-custom-watches-crafted-by-your-story)
+
+## Advisor roles & miscellaneous
+
+### **So Responsible** [2023 - Present]
+
+I am a technology advisory for [So Responsible](http://soresponsible.org/), a startup to make charitable donations in Hong Kong trivially easy.
 
 ## Education & certs
 
