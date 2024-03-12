@@ -77,6 +77,6 @@ Some of the Kubernetes applications I have configured and have familiarity with 
 
 ## Education & certs
 
-* BSc. (1st hons.) Risk Management & Business Intelligence, The Hong Kong University of Science & Technology, 3.68/4.3
-* 2022: [DAML Associate](https://www.digitalasset.com/developers/certifications) | [Thought Machine Vault fundamentals](https://certificates.thoughtmachine.net/f1fc025a-231d-4b62-95f8-b77e922e3e7c#gs.6rq821)
+* 2018: BSc. (1st hons.) Risk Management & Business Intelligence, The Hong Kong University of Science & Technology, 3.68/4.3
 * 2020: [Aalto EE: Essentials of Leading Change](https://www.aaltoee.com/programs/essentials-of-leading-change-online) | [Blue Prism](https://www.blueprism.com/): Process Controller,Developer | [UiPath](https://www.uipath.com/) Solution Architect, Developer, Orchestrator, Implementation Methodology
+* 2022: [DAML Associate](https://www.digitalasset.com/developers/certifications) | [Thought Machine Vault fundamentals](https://certificates.thoughtmachine.net/f1fc025a-231d-4b62-95f8-b77e922e3e7c#gs.6rq821)
