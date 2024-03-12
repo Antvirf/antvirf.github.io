@@ -28,7 +28,7 @@ task = PeriodicTask(
 
 In my current codebase, tasks were sitting in `tasks.py`, whereas creating this `PeriodicTask` was instead in a different file, triggered by another function.
 
-### Solution (ish)
+## Solution (ish)
 
 The best solution I have come up with is to **move the code that creates `PeriodicTasks` as close as possible to the task it is scheduling** to try to get better locality of the behavior. In my case, this meant I created a class called `Tasker` to handle the scheduling, and declared the main task it would call right below it, like so:
 
