@@ -3,7 +3,7 @@ weight: 15
 title: CV
 ---
 
-# CV ⋅ Antti Viitala
+# [CV ⋅ Antti Viitala](https://aviitala.com/docs/cv/)
 
 *For detailed timelines please refer to [LinkedIn](https://www.linkedin.com/in/anttiviitala)*
 
