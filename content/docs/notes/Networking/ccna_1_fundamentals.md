@@ -112,3 +112,117 @@ Speed | Name | IEEE Standard (informal) | IEEE Standard (formal) | Cable type
 - *Unicast* address means an address of an individual device
 - *Multicast* address means an address listened on by multiple devices
 - *Broadcast* address is the address listened on by every device (`FFFF.FFFF.FFFF.FFFF`) on the LAN
+
+### Wide Area Networks (WANs)
+
+You own LANs, but often have to lease WANs to connect your local network to the broader (inter)net. Telecom companies make this happen with various technologies, including HDLC (High-level Data Link Control), PPP (Point-to-Point Protocol) and Ethernet (Ethernet emulation, or Internet over Multi-Protocol Label Switching - EoMPLS).
+
+#### Leased-line WAN
+
+- AKA: Leased circuit, circuit, serial link/line, point-to-point link/line, T1, WAN link, link, private line
+- Direct connection from one LAN to another
+- Physical details are unknown to the end client and up to the telco, but usually ~all buildings have connections wired up and if/when tenants purchase connections from the telco, these connections are activated
+- Various L2 protocols can be used as mentioned above, which may then require different/specialized equipment on both ends of the leased line
+- Regardless of protocol, a separate set of headers and trailers is used for the leased-line connection over WAN
+  - Ethernet frame used in the local LAN is discarded, and the content is repackaged into a new Ethernet frame for transmission over the line
+
+{{<mermaid>}}
+flowchart LR
+subgraph LAN1
+PC1
+R1
+end
+
+subgraph LAN2
+PC2
+R2
+end
+
+PC1 <--> R1 <-->WAN["WAN Connection"]<--> R2 <--> PC2
+
+{{</mermaid>}}
+
+#### Other alternatives besides leased-lines
+
+This is what consumers mostly use, though many small(er) businesses also use these for their internet access.
+
+- Fiber
+- 4G/5G routers to access the internet via mobile data networks
+- Cable - CATV cable
+- DSL - telephone line
+
+#### Internet as a large WAN
+
+- End users connect their LANs via their ISP (Internet Service Provider) to the ISP's WAN
+- ISPs are then connected with each other, in a 'broader WAN, allowing routing across the entire internet
+
+## IPv4 Addressing & Routing
+
+- Routing: Hosts/routers forwarding IP packets (L3PDUs), while relying on underlying network to forward the bits
+- IP addressing: (Grouped) Addresses used to identify destination and source
+- IP routing protocol: A way for routers to dynamically 'learn' about what IP address groups should be routed where
+- Other utilities: DNS, ARP (Address Resolution Protocol)
+
+### Basic routing logic flow
+
+1. If the target is in the same LAN as me (I can reach them directly), send the packet to them
+2. Otherwise, if I'm a host, send the packet to my `default gateway` - the router will figure out what to do with it
+3. If I'm a router, send the packet to the right place as its next *hop* based on my *IP routing table* (assuming FCS produced no errors; if we had an error with the Ethernet frame, discard the frame.)
+
+Depending on the connectivity between routers, packets will be de-encapsulated and encapsulated multiple times over HDLC, Ethernet, or other protocols.
+
+### IP Addressing and routing
+
+IPv4 addresses are usually written out in "dotted decimal notation" or DDN format, like so: `_._._._`, e.g. `127.0.0.1`, where each section is one octet (an 8-bit binary number). IP addresses are 'naturally' grouped since each section takes the range `0-255`, so e.g.:
+
+- `192.168.0.1`
+- `192.168.0.100`
+- `192.168.0.125`
+
+Can all be "grouped" under `192.168.0.0` - a set of consecutive addresses, or an *IP network*. IP addresses in the same group must not be separated from each other by a router. An address ending in `0` is considered the identifier of the network, and the address ending in `255` is a special address that broadcasts to all network participants. Hence the usable values for hosts are `1-254`, inclusive, for each octet.
+
+### IP Network classes
+
+The classes are listed below by the value of the first octet. The fraction refers to the proportion of IPv4 addresses belonging to that class, out of all available addresses.
+
+Range | Class | Size | Usage
+-- | -- | -- | --
+`1-126` | Class A | 1/2 | Unicast
+`127` | Reserved | (part of class A's 1/2) | `localhost`/loopback usage
+`128-191` | Class B | 1/4 | Unicast
+`192-223` | Class C | 1/8 | Unicast
+`224-239` | Class D | 1/16 | Multicast
+`240-255` | Class E | 1/16 | Reserved
+
+### IP Subnetting
+
+Subnetting divides an IP network into smaller groups, so that less IPs may go unused/wasted. Not much magic or detail here yet.
+
+### Routing protocols
+
+Hosts rely on routers to know where to send packets, but network structures can change all the time. Routing protocols are what routers use to communicate with each other and figure out which router(s) can handle which network groupings. Routing protocols:
+
+- Dynamically update and 'learn' each subnet in the network
+- Try to optimise and provide the 'best' route for a given packet
+- Deprecate invalid or no longer existing routes
+- Prevent routing loops
+
+The basic process of a routing protocol is:
+
+1. Each router adds a route to its own routing table about subnets directly connected to that router.
+2. Each router sends all neighbouring routers the information in its routing table (this is called a *routing update*), including the routes from step #1 as well as any routers learned from other routers.
+
+### DNS
+
+- UDP over port 53, ask for the IP of a server based on hostname
+
+### ARP - Address Resolution Protocol
+
+- Method for hosts and routers to learn the MAC address corresponding to a server's current IP address
+- Send out a request, "if this is your IP, please reply with your MAC", store the result in cache
+- Sent over multicast/broadcast address to everyone on the network
+- Try `arp -a` to check the current contents of the ARP cache
+
+### ICMP Echo - `ping`
+
+- Ping (Packe Internet Groper) uses Internet Control Message Protocol (ICMP) called *ICMP echo request* to a particular IP, to test basic connectivity of the IP network
