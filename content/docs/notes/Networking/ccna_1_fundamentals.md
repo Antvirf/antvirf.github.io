@@ -8,6 +8,8 @@ title: "CCNA Part 1: Networking Fundamentals"
 
 ### `TCP/IP` Networking model
 
+The model s named after the most common L4 and L3 protocols, `TCP` and `IP` respectively.
+
 Layer | Name | Example technology | What's being transmitted| Function | OSI-model equivalent layer
 -- | -- | -- | -- | -- | --
 1 | (Link) Physical | RJ-45 cable | Electrical signals | Transmit information (=bits) over some physical medium from one device to another | Same
@@ -216,6 +218,21 @@ The basic process of a routing protocol is:
 
 - UDP over port 53, ask for the IP of a server based on hostname
 
+{{<mermaid>}}
+sequenceDiagram
+
+participant PC
+participant DNS
+participant Webserver at 192.168.0.168
+participant Router
+
+PC --> Router: Gets an IP address of the DNS server using DHCP
+PC ->> DNS: Where is aviitala.com?
+DNS ->> PC: The IP of aviitala.com is 192.168.0.168
+PC ->> Webserver at 192.168.0.168: Fetch website aviitala.com
+
+{{</mermaid>}}
+
 ### ARP - Address Resolution Protocol
 
 - Method for hosts and routers to learn the MAC address corresponding to a server's current IP address
@@ -226,3 +243,106 @@ The basic process of a routing protocol is:
 ### ICMP Echo - `ping`
 
 - Ping (Packe Internet Groper) uses Internet Control Message Protocol (ICMP) called *ICMP echo request* to a particular IP, to test basic connectivity of the IP network
+
+## TCP/IP Transport
+
+As a reminder, since we're on L4, behaviour of the protocols at L4 is identical whether we transmit across a LAN or the entire internet. The details are handled at the lower layers.
+
+The most common protocols at this layer are Transmission Control Protocol (`TCP`) and User Datagram Protocol (`UDP`). Newer protocols like [QUIC](https://en.wikipedia.org/wiki/QUIC) also exist ([ref to Tailscale blogpost on QUIC](https://tailscale.com/blog/quic-udp-throughput)).
+
+### Functions of the transport layer (L4)
+
+Function | Description | Supported by TCP? | Supported by UDP?
+-- | -- | -- | --
+Multiplexing using ports | Receiving hosts choose application to route the traffic to based on ports | Yes | Yes
+Error recovery | Use Sequence and Acknowledgement operations to detect errors and retry | Yes | No
+Flow control using windowing | Window sizes to protect buffer space and routing device traffic overload | Yes | No
+Connection establishment | Whether a connection is 'initialized' for a particular port using Sequence and Acknowledgement fields. This determines whether the protocol is 'connectionless' (like UDP) connection-oriented (like TCP) | Yes | No
+Ordered data transfer and segmentation | Ensure ordered transmission of bytes to the upper layer | Yes | No
+
+UDP is much simpler than TCP, and since the protocol has less to do, the headers used by UDP are much smaller (8 bytes) than those of TCP (20 bytes).
+
+### Multiplexing
+
+The combination of the server's IP, transmission protocol used, and the port number, is called a *socket*.
+
+When receiving traffic, a device needs to create a socket for each application in order to be able to distinguish traffic to it. Devices will allocate a local port in the ephemeral range (`1024-65535`) to have that traffic routed to. An application running on that device only gets the traffic routed to that particular port. The transmitting device, e.g. a webserver on port `80`, uses the same application-relevant socket for all connections, so multiplexing is only relevant on the receiving side in such an example.
+
+{{<mermaid>}}
+flowchart LR
+
+Server1 --> |Browser #1\n192.168.0.100:1234| PC1
+Server1 --> |Browser #2\n192.168.0.100:5678| PC1
+
+{{</mermaid>}}
+
+In this example, browser 1 uses the socket `192.168.0.100:1234/TCP` and browser 2 uses the socket `192.168.0.100:5678/TCP`.
+
+### Examples of well-known port numbers
+
+Direct reference to [Internet Assigned Numbers Authority](http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.txt)
+
+- 20/TCP: FTP data
+- 21/TCP: FTP control
+- 22/TCP: SSH
+- 23/TCP: Telnet
+- 25/TCP: SMTP
+- 53/TCP, 53/UDP: DNS, usually UDP
+- 80/TCP: HTTP
+- 110/TCP: POP3
+- 161/UDP: SMP
+- 443/TCP: HTTPS/SSL
+- 514/UDP: Syslog
+
+### TCP Connection establishment and termination
+
+3-way handshake starts every TCP *connection*. Only after the process completes can other data be transferred. UDP by contrast is *connectionless*, so it just sends data directly without needing to establish a "connection".
+
+- `SYN` refers to "synchronize sequence numbers", which are used for TCP error checking and recovery
+- `ACK`nowledges the received request
+
+{{<mermaid>}}
+sequenceDiagram
+alt establishment
+  PC1 ->> Server1:  1. SYN DPORT=80, SPORT=127
+  Server1 ->> PC1:  2. SYN, ACK, DPORT=1027, SPORT=80
+  PC1 ->> Server1:  3. ACK, DPORT=80, SPORT=127
+end
+
+alt termination
+  PC1 ->> Server1:  1. ACK, FIN
+  Server1 ->> PC1:  2. ACK
+  Server1 ->> PC1:  3. ACK, FIN
+  PC1 ->> Server1:  4. ACK
+end
+{{</mermaid>}}
+
+### TCP Error recovery
+
+- Each message contains a sequence number of which bytes are included, e.g. 1000-2000
+- These sequence numbers are used to figure out what segments were lost during transfer
+- Example case:
+  - Transmitter sends a message with `sequence=1000` (ok)
+  - Transmitter sends a message with `sequence=2000` (wasn't received)
+  - Transmitter sends a message with `sequence=3000` (ok)
+  - Recipient's acknowledgement must *acknowledge* what sequence it wants next. Since we missed out `2000`, we send `ACK` with next sequence `2000`
+  - Transmitter (re)sends the message with `sequence=2000`
+  - Recipient `ACK` will now ask for `4000`
+  - Life goes on
+- How many bytes are included in one message is the *TCP window* size, and this can be adjusted dynamically based on connection quality.
+  - When the connection is established, the server will tell the client what value to use for the window
+  - Worse the connection, shorter the window that will be used to do error checking more frequently.
+
+### UDP
+
+Less overhead than TCP, so uses less bandwidth and is somewhat faster - since there is no error recovery, flow control or ordering guarantees. Commonly used for high-bandwidth and low-latency requiring applications that are ~relatively robust to small errors, e.g. VoIP. Losing a voice segment isn't the end of the world, and by the time error recovery would have recovered the data, it is too late to play it given the real-time nature and needs of VoIP applications.
+
+DNS also generally uses UDP since the higher layers will just retry DNS queries in case they fail.
+
+### Uniform Resource Identifiers (URIs)
+
+The 'real' name for links. URL (L for Locator) is also commonly used but not the formal standard.
+
+- URI standard: `scheme://authority/path`
+- HTTP example: `http://google.com/search`
+- Redis example: `redis://hostname`

@@ -3,15 +3,20 @@
     "autoscaler",
     "CCNA",
     "CSMA",
+    "DPORT",
     "GBASE",
     "HDLC",
     "Hetzner",
     "homelab",
     "MPLS",
+    "nowledges",
     "Packe",
     "QUIC",
     "robusta",
     "Subnetting",
+    "Tailscale",
+    "webserver",
+    "Webserver",
     "WLAN"
   ]
 }
