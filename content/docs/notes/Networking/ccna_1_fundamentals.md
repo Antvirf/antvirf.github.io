@@ -1,8 +1,8 @@
 ---
-title: "CCNA Part 1: Networking Fundamentals"
+title: "CCNA 1: Networking Fundamentals"
 ---
 
-# CCNA Part 1: Networking Fundamentals
+# CCNA 1: Networking Fundamentals
 
 ## Overview of networking model
 
@@ -10,13 +10,15 @@ title: "CCNA Part 1: Networking Fundamentals"
 
 The model s named after the most common L4 and L3 protocols, `TCP` and `IP` respectively.
 
-Layer | Name | Example technology | What's being transmitted| Function | OSI-model equivalent layer
--- | -- | -- | -- | -- | --
-1 | (Link) Physical | RJ-45 cable | Electrical signals | Transmit information (=bits) over some physical medium from one device to another | Same
-2 | (Link) Data  | Ethernet protocol, Point-to-Point Protocol (PPP) | "Frames" / L2 PDU | Encapsulation and addressing (MAC addresses) | Same
-3 | Network | IP Protocol | "Packets" / L3 PDU | Addressing (IP addresses) and routing | Same
-4 | Transport | TCP, UDP, QUIC | "Segments" / L4 PDU | Error recovery ? | Same
-5-7 | Application | HTTP, SMTP, FTP, SSH | Application dependent, e.g. HTTP request | | Corresponds to Session/Presentation/Application layers 5/6/7 of OSI
+Layer | PDU | Name | Example technology | What's being transmitted| Function | OSI-model equivalent layer
+-- | -- | -- | -- | -- | -- | --
+1 | Bit |(Link) Physical | RJ-45 cable | Electrical signals | Transmit information (=bits) over some physical medium from one device to another | Same
+2 | Frame | (Link) Data  | Ethernet protocol, Wireless Point-to-Point Protocol (PPP) | "Frames" / L2 PDU | Encapsulation and addressing (MAC addresses) | Same
+3 | Packet | Network | IP, ARP, ICMP | "Packets" / L3 PDU | Logical addressing (IP addresses), routing and path determination | Same
+4 | Segment | Transport | TCP, UDP, QUIC | "Segments" / L4 PDU | Error recovery ? | Same
+5-7 | Data | Application | HTTP, SMTP, FTP, SSH | Application dependent, e.g. HTTP request | | Corresponds to Session/Presentation/Application layers 5/6/7 of OSI
+
+*All People Seem To Need Data Processing*
 
 When data is transmitted, each layer *encapsulates* its own data before passing on the message to the level below:
 
@@ -37,6 +39,11 @@ Layer | Protocol | Common devices in this layer
 3 | IP | Routers
 2 | Ethernet, HDLC | LAN switches, wireless access points, modems
 1 | RJ-45 | Cables, LAN hubs, LAN repeaters
+
+### Other common application protocols
+
+- Dynamic Host Configuration Protocol (DHCP): Assign IP addresses to requesting clients
+- Simple Network Management Protocol (SNMP): Enable monitoring of devices attached to the network
 
 ## Local Area Networks (LANs)
 
@@ -73,7 +80,7 @@ PC4 --> sw2
 
 ### Ethernet physical layer standards
 
-Speed | Name | IEEE Standard (informal) | IEEE Standard (formal) | Cable type
+Bandwidth | Name | IEEE Standard (informal) | IEEE Standard (formal) | Cable type
 -- | -- | -- | -- | --
 10 Mbps | Ethernet | 10BASE-T | 802.3 | Copper, UTP (Unshielded Twisted Pair)
 100 Mbps | Fast Ethernet | 100BASE-T | 802.3u | Copper UTP
@@ -106,6 +113,15 @@ Speed | Name | IEEE Standard (informal) | IEEE Standard (formal) | Cable type
 - "Full duplex": Devices can send and receive at the same time
 - "Half duplex": Devices can only either send or receive at any one time. Collisions are possible, and must be handled by CSMA/CD (Carrier-Sense Multiple Access with Collision Detection)
 
+### CSMA/CD
+
+1. A device with a frame to send listens until the Ethernet is not busy.
+2. When the Ethernet is not busy, the sender(s) begin(s) sending the frame.
+3. The sender(s) listen(s) to make sure that no collision occurs.
+4. If a collision occurs, the devices that were sending a frame each send a jamming signal to ensure that all stations recognize the collision.
+5. When the jamming is complete, each sender randomizes a timer and waits until the timer expires before trying to resend the collided frame.
+6. When each random timer expires, the process starts again from the beginning.
+
 ### MAC (Media Access Control) addresses
 
 - AKA: LAN address, Ethernet address, hardware address, burned-in address, physical address, universal address
@@ -115,11 +131,19 @@ Speed | Name | IEEE Standard (informal) | IEEE Standard (formal) | Cable type
 - *Multicast* address means an address listened on by multiple devices
 - *Broadcast* address is the address listened on by every device (`FFFF.FFFF.FFFF.FFFF`) on the LAN
 
-### Wide Area Networks (WANs)
+## Wide Area Networks (WANs)
 
 You own LANs, but often have to lease WANs to connect your local network to the broader (inter)net. Telecom companies make this happen with various technologies, including HDLC (High-level Data Link Control), PPP (Point-to-Point Protocol) and Ethernet (Ethernet emulation, or Internet over Multi-Protocol Label Switching - EoMPLS).
 
-#### Leased-line WAN
+The most common physical connections are:
+
+- 60-pin serial connection to a CSU/DSU (legacy)
+- RJ-45 T1 controller to a CSU/DSU (legacy)
+- RJ-11 connection to a dialup or DSL modem
+- Cable coaxial connection to a cable modem
+- Fiber Ethernet connection ot the service provider's switch
+
+#### Leased-line WANs (legacy)
 
 - AKA: Leased circuit, circuit, serial link/line, point-to-point link/line, T1, WAN link, link, private line
 - Direct connection from one LAN to another
@@ -144,14 +168,28 @@ PC1 <--> R1 <-->WAN["WAN Connection"]<--> R2 <--> PC2
 
 {{</mermaid>}}
 
-#### Other alternatives besides leased-lines
-
-This is what consumers mostly use, though many small(er) businesses also use these for their internet access.
+#### Connecting to the internet - Modern alternatives
 
 - Fiber
 - 4G/5G routers to access the internet via mobile data networks
 - Cable - CATV cable
 - DSL - telephone line
+
+Building on top of these connections, remote access to internal corporate networks is most commonly provided over Virtual Private Network (VPN)
+
+#### Network topologies
+
+Physical topology refers to layout of physical devices; logical topologies refer to how signals are transmitted from one point to another. They do not need to be the same, where physical topologies often use star/extended star, but logically operate like rings.
+
+- Point-to-Point (just a line)
+- Ring
+- Bus
+- Star
+- Extended star
+- Partial mesh
+- (Complete) mesh
+
+Legacy ethernet topologies include bus, as well as star with a hub in the middle (logically, a bus).
 
 #### Internet as a large WAN
 
@@ -163,7 +201,7 @@ This is what consumers mostly use, though many small(er) businesses also use the
 - Routing: Hosts/routers forwarding IP packets (L3PDUs), while relying on underlying network to forward the bits
 - IP addressing: (Grouped) Addresses used to identify destination and source
 - IP routing protocol: A way for routers to dynamically 'learn' about what IP address groups should be routed where
-- Other utilities: DNS, ARP (Address Resolution Protocol)
+- Other utilities: DNS, ARP (Address Resolution Protocol, finding a host's hardware address from their IP)
 
 ### Basic routing logic flow
 
@@ -288,6 +326,8 @@ Direct reference to [Internet Assigned Numbers Authority](http://www.iana.org/as
 - 23/TCP: Telnet
 - 25/TCP: SMTP
 - 53/TCP, 53/UDP: DNS, usually UDP
+- 67, 68/UDP: DHCP
+- 69/UDP: TFTP
 - 80/TCP: HTTP
 - 110/TCP: POP3
 - 161/UDP: SMP
