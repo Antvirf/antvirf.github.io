@@ -234,6 +234,10 @@ Range | Class | Size | Usage
 `224-239` | Class D | 1/16 | Multicast
 `240-255` | Class E | 1/16 | Reserved
 
+Class A addresses: `network.host.host.host`, e.g. 10.0.0.0/8
+Class B addresses: `network.network.host.host`, e.g. 172.16.0.0/12
+Class C addresses: `network.network.network.host`, e.g. 192.168.0.0/16
+
 ### IP Subnetting
 
 Subnetting divides an IP network into smaller groups, so that less IPs may go unused/wasted. Not much magic or detail here yet.
