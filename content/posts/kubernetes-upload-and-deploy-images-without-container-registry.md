@@ -82,14 +82,14 @@ crio <-->|"Try to find and launch the right image"|crilocal
 
 ## Step 1: Get your container image to a jump-host machine using a `.tar` file
 
-In an environment without a container registry, you'll likely need to transfer your images as `.tar` files at some stage This requires first **saving** the image as a `.tar` file, **transferring** it, and then **loading** it into the node's container runtime. If you already have the container image loaded to your local container runtime on a machine that has direct access to the relevant node(s), skip to step 1.
+In an environment without a container registry, you'll likely need to transfer your images as `.tar` files at some stage This requires first **saving** the image as a `.tar` file, **transferring** it, and then **loading** it into the node's container runtime.
 
 To **save** an image as a `.tar` file:
 
-    ```bash
-    # on a machine where you have built/pulled the image
-    podman save -o ./myimage.tar myimage:latest
-    ```
+```bash
+# on a machine where you have built/pulled the image
+podman save -o ./myimage.tar myimage:latest
+```
 
 Transfer it to your node, perhaps with `scp`, where `MYUSER` is your username on the node, and `MYNODE` is the IP address or hostname of your node;
 
