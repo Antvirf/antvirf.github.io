@@ -131,7 +131,7 @@ podman image scp myimage:latest /var/run/crio/crio.sock
 Now, this image should be visible to the CRI as well:
 
 ```bash
-sudo crictl images | grep airflow
+sudo crictl images # check output for your image
 ```
 
 ## Testing your setup
