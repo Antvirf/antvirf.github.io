@@ -12,23 +12,27 @@ title: CV
 * Well-rounded software engineer with a focus on infrastructure, Kubernetes and GitOps
 * Lead Cloud infrastructure & DevOps at Synpulse8, supporting multiple projects and internal products working primarily with Kubernetes on AWS EKS, as well as OpenShift for on-prem deployments
 * ~5 years of experience within technical consulting for financial services
-* Comfortable picking up new topics/technologies and driving their implementation - love learning new things!
+* Comfortable picking up new topics/technologies and driving their implementation
 
 ## Key skills
 
-* **Kubernetes** (EKS), infrastructure-as-code (Terraform) and GitOps (Flux and ArgoCD). Everything I manage is declarative, automated and documented.
+* **Kubernetes** (EKS) and **OpenShift**, infrastructure-as-code (Terraform) and GitOps (Flux and ArgoCD). Everything I manage is declarative, automated and documented.
 * **Experience with cloud providers**:
   * **AWS**: Most of my experience is in AWS. Primarily services around EKS and RDS, so everything related to networking (VPCs, LBs, EC2), secrets (SM and SSM), certs (ACM), IAM, etc.
   * **Azure**: A ~year's experience running an AKS cluster, basic networking and some databases. Azure AD usage and SSO w/ various apps.
   * **Others** (Only used for short term POCs and experiments): GCP, Linode, Railway, Hetzner
 * **Tooling and other applications**: Backstage (setting up and running our internal Backstage dev portal), GitHub Actions, containerization tools, SonarCloud, JFrog Artifactory, a bit of Jenkins, Postgres primarily for databases
-* Decent **Linux/sysadmin** skill set, understanding of basic OS structures, perms, networking logic.
+* Decent **Linux/sysadmin** skill set, understanding of basic OS structures, perms, networking logic. Comfortable in a terminal.
   * Operating systems: Primarily distros based on Debian/Ubuntu/Alpine and Amazon Linux. Experimenting with various OS' (NixOS, virtualized MacOS), networking and virtualization in my homelab.
 * **General programming languages/frameworks:**
   * Strong: Python (especially Django) | Terraform | Bash and shell scripts
   * Basic: Golang | HTML/CSS/JS
 * **Languages:** English 🇬🇧 | Finnish 🇫🇮
-* **Technical writing examples**: [AWS Postgres performance comparison](https://aviitala.com/posts/aws-rds-vs-aurora-postgresql-performance-comparison/), [Kubernetes homelab with Flux](https://aviitala.com/posts/flux-homelab/), [Searching across GH Actions workflow logs](https://aviitala.com/posts/github-actions-log-search/)
+* **Technical writing examples**:
+  * [Drawing the line between Kubernetes "infrastructure" resources](https://aviitala.com/posts/drawing-the-line-between-infra-and-kubernetes-for-better-portability/)
+  * [AWS Postgres performance comparison](https://aviitala.com/posts/aws-rds-vs-aurora-postgresql-performance-comparison/)
+  * [Kubernetes homelab with Flux](https://aviitala.com/posts/flux-homelab/)
+  * [Searching across GH Actions workflow logs](https://aviitala.com/posts/github-actions-log-search/)
 * **Personal projects**: See [GitHub](https://github.com/Antvirf)
 
 With Kubernetes I have experience primarily with EKS, k3s and AKS. I prefer to manage clusters with GitOps using [flux](https://github.com/fluxcd/flux2), though I am also familiar with [ArgoCD](https://argo-cd.readthedocs.io/en/stable/). I have worked with both [Istio](https://istio.io/) and [Cilium](https://cilium.io/) as service meshes, and much prefer Cilium. For interacting with clusters I'm a huge fan of [K9S](https://k9scli.io/).
@@ -44,12 +48,12 @@ Some of the Kubernetes applications I have configured and have familiarity with 
 #### **Solution Architect (Vice President)** - Devops, CI/CD, cloud, system design & software development
 
 * Design, set up and maintain central internal cloud infrastructure and developer platform following the GitOps model - champion GitOps and Flux in the organisation
+* Lead, troubleshoot, and support on-prem OpenShift deployments of various applications, including Synpulse8 applications as well as Avaloq ACPR
 * Devops and infra-as-code for a mobile application with a CMS API backend (AWS App Runner / Aurora / WAF / ECR / S3 etc. managed via Terraform, GitHub Actions, JavaScript)
 * Devops and infra-as-code for several microservices-based financial applications (primarily using AWS EKS / AWS Aurora DBs / S3 etc. managed via Terraform and Kubernetes, GitHub Actions)
 * Devops and infra-as-code for a financial-services focused risk analytics visualization app (Azure/AWS, AKS/EKS, GitHub Actions, front: React / back: Spring, Apache Pinot, Terraform, Airflow)
 * Set up, administration and operation of our CI/CD pipelines and cloud infra, for example our internal product development clusters (AWS, Kubernetes, GitHub Actions, JFrog)
 * S8 Operating model definition: devops, tech stack (incl. licensing), architecture principles, security policies
-* Infra, architecture and development of a [DAML](https://www.digitalasset.com/developers)-based collateral management system MVP
 * Various internal initiatives: creating websites/portals/webapps with e.g. Hugo and Azure Static Web Apps
 
 #### Solution Architect (Senior Analyst) - System design, software development
