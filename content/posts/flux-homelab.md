@@ -113,7 +113,7 @@ ngrok --> |Services accessed via ngrok| user["Users"]
 ### Step 0: Preparation
 
 - **Hardware**: The guide assumes you have a machine with a recent installation of Ubuntu.
-- **ngrok**: You need to sign up for a free ngrok account and claim your [free domain name](https://dashboard.ngrok.com/cloud-edge/domains).
+- **ngrok**: You need to sign up for a free ngrok account and claim your [free domain name](https://ngrok.com/blog-post/free-static-domains-ngrok-users).
 
 ### Step 1: Install K3s
 

@@ -29,8 +29,8 @@ participant resource as Protected Resource
 link ingress: Docs home @ https://kubernetes.github.io/ingress-nginx/
 link ingress: Useful example @ https://kubernetes.github.io/ingress-nginx/examples/auth/oauth-external-auth/
 link oap: Docs home @ https://oauth2-proxy.github.io/oauth2-proxy/
-link oap: Configuration @ https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview/
-link oap: Auth providers @ https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/oauth_provider#github-auth-provider
+link oap: Configuration @ https://oauth2-proxy.github.io/oauth2-proxy/configuration/overview
+link oap: Auth providers @ https://oauth2-proxy.github.io/oauth2-proxy/configuration/providers/github
 link idp: OAuth 2.0 docs @ https://oauth.net/2/
 link idp: GitHub OAuth provider docs  @ https://docs.github.com/en/developers/apps/building-oauth-apps
 
@@ -229,6 +229,6 @@ As a general tip [K9s](https://k9scli.io) is a great tool to manage your cluster
 ## References
 
 * [NGINX Ingress Controller: External OAUTH Authentication](https://kubernetes.github.io/ingress-nginx/examples/auth/oauth-external-auth/)
-* [OAuth2 Proxy docs on configuration](https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/overview/)
-* [OAuth2 Proxy docs on auth providers](https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/oauth_provider#github-auth-provider)
+* [OAuth2 Proxy docs on configuration](https://oauth2-proxy.github.io/oauth2-proxy/configuration/overview/)
+* [OAuth2 Proxy docs on auth providers](https://oauth2-proxy.github.io/oauth2-proxy/configuration/providers/github)
 * [nginxdemos/hello](https://hub.docker.com/r/nginxdemos/hello/) - Good minimal image to deploy as a placeholder protected resource

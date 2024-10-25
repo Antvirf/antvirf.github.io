@@ -295,7 +295,7 @@ auth:
 
 ## OAuth2 provider configuration in Azure
 
-Even though our ```oauth2-proxy``` configuration uses the ```oidc``` provider here instead of the Azure provider, the setup steps within Azure Active Directory are more or less the same. They are documented [here](https://oauth2-proxy.github.io/oauth2-proxy/docs/configuration/oauth_provider/#azure-auth-provider).
+Even though our ```oauth2-proxy``` configuration uses the ```oidc``` provider here instead of the Azure provider, the setup steps within Azure Active Directory are more or less the same. They are documented [here](https://oauth2-proxy.github.io/oauth2-proxy/configuration/providers/azure).
 
 The key part is to add our authentication endpoint as the **Redirect URI**, as shown below:
 
@@ -328,5 +328,5 @@ spec:
 
 * [OAuth2-proxy configuration with nginx-ingress](https://aviitala.com/posts/nginx-ingress-oauth2/)
 * The 'redirect sidecar' idea: [Single OAuth2 proxy for multiple ingresses](https://www.callumpember.com/Kubernetes-A-Single-OAuth2-Proxy-For-Multiple-Ingresses/)
-* [OAuth2-proxy docs on session storage](https://```oauth2-proxy```.github.io/```oauth2-proxy```/docs/configuration/session_storage/)
+* [OAuth2-proxy docs on session storage](https://oauth2-proxy.github.io/oauth2-proxy/configuration/session_storage)
 * [Which redis architecture to use for sessions?](https://stackoverflow.com/questions/53060714/redis-sentinel-standalone-or-cluster-which-is-best-for-session)
