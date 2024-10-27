@@ -23,6 +23,8 @@ Links:
 - Connect IQ link to watch face
 -->
 
+{{< adsense  >}}
+
 ## High-level view of the key steps
 
 1. (Assumed as pre-requisite): Install [Visual Studio Code](https://code.visualstudio.com/)
