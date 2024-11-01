@@ -6,7 +6,10 @@ description = "My experiences with various keyboards and mice, and notes on lear
 tags = [
     "ergonomics",
 ]
+images = ['content/kinesis-full.jpeg']
 +++
+
+![desk](/content/kinesis-full.jpeg)
 
 *Links to products on this page may be affiliate links.*
 
