@@ -10,6 +10,7 @@ Standard format:
 -->
 
 
+- [`target/pod-reaper`](https://github.com/target/pod-reaper): [reaping by `POD_STATUS_PHASES` - `Pending`, `Running`, `Succeeded`, `Failed`, `Unknown`](https://github.com/target/pod-reaper/pull/94)
 - [`pennersr/django-allauth`](https://github.com/pennersr/django-allauth): [Update/remove exception handling on provider imports to not hide errors](https://github.com/pennersr/django-allauth/pull/3536)
 * [`terraform-aws-modules/terraform-aws-rds-aurora`](https://github.com/terraform-aws-modules/terraform-aws-rds-aurora): [Update storage_type docs entry to mention I/O Optimized storage configuration](https://github.com/terraform-aws-modules/terraform-aws-rds-aurora/pull/393)
 * [`kubernetes-sigs/external-dns`](https://github.com/kubernetes-sigs/external-dns): [Update deprecated k8s apiVersions from docs](https://github.com/kubernetes-sigs/external-dns/pull/3646)
