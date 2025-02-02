@@ -22,7 +22,7 @@ The UniFi Dream Machine is a good base for this setup, primarily because it is h
 
 The UDM is a good starting point to get into UniFi and networking in general, as it covers a broad set of features up to a decent level. However for anything beyond a small home;
 
-- 1 Gigabit connection to the internet is relatively slow, with home fiber broadbands offering 5, 10, even 25 G in some cases already. More modern and dedicated gateways can provide much better performance.
+- 1 Gigabit connection to the internet is relatively slow, with home fiber broad bands offering 5, 10, even 25 G in some cases already. More modern and dedicated gateways can provide much better performance.
 - Security features offered on UDM like packet inspection can have a significant impact on your actual internet bandwidth and speed. A separate (and more powerful) network firewall for example would probably do a better job here, especially if you plan to host services accessible from the outside.
 - 4 x 1 GbE ports - servers and desktops using 10 GbE are readily available, so having the UDM capped at 1 GbE limits your bandwidth on devices that could be capable of more. Four ports are also quickly exhausted
 - No support for secondary WAN (=internet) connection
