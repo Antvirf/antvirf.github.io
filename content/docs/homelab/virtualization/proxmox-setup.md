@@ -11,11 +11,12 @@ Virtualization allows you to separate the physical and logical management of you
 This allows you to think about your compute and physical hardware as a pool that can contract, expand and change without affecting applications running on it.
 
 Being able to manage logical hosts virtually rather than having each of them tied to a single physical server makes it easy to move fast when working on applications. As a result, you can...
-    - Experiment with different operating systems and versions with minimal friction
-    - Create domain or application-specific virtual machines that are responsible for just one thing, making them easy to manage and maintain
-    - Back up an existing machine *fully*, and know that it can be restored to its exact previous state with a few clicks
-    - Clone an existing machine for experimentation and testing critical changes
-    - Move logical hosts between  physical machines of the cluster in case hardware needs to be repaired or decommissioned
+
+* Experiment with different operating systems and versions with minimal friction
+* Create domain or application-specific virtual machines that are responsible for just one thing, making them easy to manage and maintain
+* Back up an existing machine *fully*, and know that it can be restored to its exact previous state with a few clicks
+* Clone an existing machine for experimentation and testing critical changes
+* Move logical hosts between  physical machines of the cluster in case hardware needs to be repaired or decommissioned
 
 A virtualization environment provides you with a big part of what could be considered a private cloud, and in the fashion of a private cloud you remain responsible for managing the hardware as well as the logical infrastructure (=virtual machines) that run on top of it.
 
