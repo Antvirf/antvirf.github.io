@@ -9,9 +9,16 @@ Standard format:
 * [``](): []()
 -->
 
+## Personal projects
 
-- [`target/pod-reaper`](https://github.com/target/pod-reaper): [reaping by `POD_STATUS_PHASES` - `Pending`, `Running`, `Succeeded`, `Failed`, `Unknown`](https://github.com/target/pod-reaper/pull/94)
-- [`pennersr/django-allauth`](https://github.com/pennersr/django-allauth): [Update/remove exception handling on provider imports to not hide errors](https://github.com/pennersr/django-allauth/pull/3536)
+* [`antvirf/stui`](https://github.com/Antvirf/stui): Terminal User Interface for Slurm HPC clusters
+
+## Other contributions
+
+* [`envoyproxy/gateway`](https://github.com/envoyproxy/gateway): [docs(grpc): add note on using BackendTrafficPolicy for GPRC timeouts](https://github.com/envoyproxy/gateway/pull/5822)
+* [`grafana/helm-charts`](https://github.com/grafana/helm-charts): [[tempo] fix(tempo): servicemonitor label fix](https://github.com/grafana/helm-charts/pull/3605)
+* [`target/pod-reaper`](https://github.com/target/pod-reaper): [reaping by `POD_STATUS_PHASES` - `Pending`, `Running`, `Succeeded`, `Failed`, `Unknown`](https://github.com/target/pod-reaper/pull/94)
+* [`pennersr/django-allauth`](https://github.com/pennersr/django-allauth): [Update/remove exception handling on provider imports to not hide errors](https://github.com/pennersr/django-allauth/pull/3536)
 * [`terraform-aws-modules/terraform-aws-rds-aurora`](https://github.com/terraform-aws-modules/terraform-aws-rds-aurora): [Update storage_type docs entry to mention I/O Optimized storage configuration](https://github.com/terraform-aws-modules/terraform-aws-rds-aurora/pull/393)
 * [`kubernetes-sigs/external-dns`](https://github.com/kubernetes-sigs/external-dns): [Update deprecated k8s apiVersions from docs](https://github.com/kubernetes-sigs/external-dns/pull/3646)
 * [`fluxcd/website`](https://github.com/fluxcd): [Update GitHub Actions examples syntax + actions versions](https://github.com/fluxcd/website/pull/1507)
