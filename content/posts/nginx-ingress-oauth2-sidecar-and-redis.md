@@ -12,6 +12,8 @@ tags = [
 images = ['images/oauth2-redis-azure.png','images/splash.png']
 +++
 
+{{< adsense >}}
+
 *[See previous article on OAuth2 Proxy configuration with nginx-ingress.](https://aviitala.com/posts/nginx-ingress-oauth2/)*
 
 ## Motivation - Multiple subdomains, single authentication proxy
