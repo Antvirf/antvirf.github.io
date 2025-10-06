@@ -11,7 +11,7 @@ Standard format:
 
 ## Personal projects
 
-* [`antvirf/stui`](https://github.com/Antvirf/stui): Terminal User Interface for Slurm HPC clusters
+* [`antvirf/stui`](https://github.com/Antvirf/stui): Terminal User Interface for Slurm HPC clusters ([`stui.dev`](https://stui.dev))
 
 ## Other contributions
 
